@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes subtle-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-element { animation: subtle-float 6s ease-in-out infinite; }
+        
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .blueprint-grid {
+            background-image: 
+                linear-gradient(to right, rgba(226, 232, 240, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(226, 232, 240, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .machined-border {
+            position: relative;
+        }
+        .machined-border::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(209, 213, 219, 0.3);
+            pointer-events: none;
+        }

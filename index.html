@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kawa Tooling Systems | Engineering Excellence</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+
+
+<link rel="stylesheet" href="/style.css">
+<style>
+    /* Reveal Typography Animation */
+    .line-reveal { opacity: 0.2; transition: opacity 0.5s ease; }
+    .line-reveal.active { opacity: 1; }
+</style>
+<script type="module" src="/main.js"></script>
+</head>
+<body class="bg-primary font-body-md text-on-surface overflow-x-hidden">
+
+<!-- TopNavBar with Utility -->
+<header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-500 shadow-none">
+    <!-- Main Header -->
+    <div id="nav-container" class="bg-primary/40 backdrop-blur-xl border-b border-machined-silver/10 h-24 flex items-center transition-all duration-500 hover:bg-primary/70">
+        <div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center w-full">
+            <a href="/index.html" class="font-display-lg text-headline-sm font-bold text-tertiary-fixed flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <!-- Abstract Geometric Logo -->
+                <div class="w-8 h-8 relative flex items-center justify-center">
+                    <div class="absolute inset-0 border-[3px] border-tertiary-fixed rotate-45"></div>
+                    <div class="absolute w-4 h-4 bg-on-primary"></div>
+                </div>
+                Kawa Tooling Systems
+            </a>
+            <nav class="hidden md:flex gap-gutter items-center relative h-full" id="main-nav">
+                <!-- Glowing Indicator -->
+                <div id="nav-indicator" class="absolute bottom-0 h-0.5 bg-tertiary-fixed transition-all duration-300 ease-out shadow-[0_0_8px_rgba(234,179,8,0.6)] pointer-events-none" style="width: 0px; left: 0px; opacity: 0;"></div>
+                
+                <!-- Products with mega menu hook (UI Polish) -->
+                <div class="relative group h-full flex items-center nav-item">
+                    <a class="font-button text-button uppercase tracking-wider text-on-primary group-hover:text-tertiary-fixed transition-colors flex items-center gap-1" href="/products.html">
+                        Products
+                    </a>
+                </div>
+                <a class="nav-item font-button text-button uppercase tracking-wider text-on-primary hover:text-tertiary-fixed transition-colors h-full flex items-center" href="/solutions.html">Solutions</a>
+                <a class="nav-item font-button text-button uppercase tracking-wider text-on-primary hover:text-tertiary-fixed transition-colors h-full flex items-center" href="/support.html">Engineering Support</a><a class="nav-item font-button text-button uppercase tracking-wider text-on-primary hover:text-tertiary-fixed transition-colors h-full flex items-center" href="/about.html">About Us</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="/support.html" class="hidden lg:block bg-tertiary-fixed text-primary px-8 py-3 font-button text-button uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-lg hover:shadow-tertiary-fixed/20 hover:ring-2 hover:ring-tertiary-fixed/50">
+                    Request Quote
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-on-primary p-2 z-[60] relative">
+                    <span class="material-symbols-outlined text-3xl transition-transform duration-300">menu</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-primary/95 backdrop-blur-2xl z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300">
+    <nav class="flex flex-col gap-8 text-center items-center w-full px-6">
+        <a href="/products.html" class="font-display-lg text-4xl text-on-primary hover:text-tertiary-fixed transition-colors block w-full text-center">Products</a>
+        <a href="/solutions.html" class="font-display-lg text-4xl text-on-primary hover:text-tertiary-fixed transition-colors block w-full text-center">Solutions</a>
+        <a class="nav-item font-button text-button uppercase tracking-wider text-on-primary hover:text-tertiary-fixed transition-colors h-full flex items-center" href="/support.html">Engineering Support</a><a href="/about.html" class="font-display-lg text-4xl text-on-primary hover:text-tertiary-fixed transition-colors block w-full text-center">About Us</a>
+        <div class="h-px w-16 bg-machined-silver/30 my-4"></div>
+        <a href="/support.html" class="inline-block bg-tertiary-fixed text-primary px-10 py-4 font-button text-button uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all w-full max-w-xs text-center shadow-lg hover:shadow-tertiary-fixed/20 hover:ring-2 hover:ring-tertiary-fixed/50">
+            Request Quote
+        </a>
+    </nav>
+</div>
+<!-- SideNavBar -->
+<aside class="hidden md:flex fixed right-6 bottom-32 rounded-full w-14 flex-col gap-unit items-center z-40 bg-surface shadow-lg border border-machined-silver p-2">
+<div class="text-[10px] font-label-caps uppercase text-primary mb-2 rotate-90 origin-center whitespace-nowrap">Engineering Support</div>
+<button class="bg-tertiary-fixed text-on-tertiary-fixed rounded-full p-3 hover:scale-110 shadow-md transition-all active:scale-90" title="WhatsApp">
+<span class="material-symbols-outlined">chat</span>
+</button>
+<button class="bg-surface text-primary p-3 rounded-full hover:bg-secondary-container transition-all hover:scale-110" title="Call">
+<span class="material-symbols-outlined">call</span>
+</button>
+<button class="bg-surface text-primary p-3 rounded-full hover:bg-secondary-container transition-all hover:scale-110" title="Email">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</aside>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-screen min-h-[700px] flex items-center overflow-hidden bg-transparent group">
+
+<div class="absolute inset-0 blueprint-grid pointer-events-none"></div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="reveal">
+<div class="inline-block px-3 py-1 bg-tertiary-fixed/10 border border-tertiary-fixed/30 rounded-sm mb-6">
+<span class="font-label-caps text-[10px] md:text-label-caps text-tertiary-fixed uppercase">ISO 9001:2015 Certified</span>
+</div>
+<h1 class="font-display-lg text-5xl md:text-display-lg text-on-primary mb-6 leading-tight">
+                        Precision Tooling Solutions for <span class="text-tertiary-fixed block md:inline">Modern Industries</span>
+</h1>
+<p class="font-body-lg text-base md:text-body-lg text-on-primary-container mb-10 max-w-xl">
+                        Delivering high-quality industrial tooling and manufacturing solutions engineered for precision, performance, and reliability.
+                    </p>
+<div class="flex flex-col md:flex-row gap-4 md:gap-6 w-full">
+<button class="w-full md:w-auto bg-tertiary-fixed text-primary px-8 py-4 font-button text-button uppercase tracking-wider hover:bg-tertiary-fixed/90 transition-all flex items-center justify-center gap-2 group">
+                            Explore Products
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<a href="/support.html" class="w-full md:w-auto border border-on-primary block text-on-primary px-8 py-4 font-button text-button uppercase tracking-wider hover:bg-on-primary/10 transition-all text-center">
+                            Request a Quote
+                        </a>
+</div>
+</div>
+<div class="hidden md:flex flex-col justify-center gap-6 reveal" style="transition-delay: 200ms;">
+    <!-- Award Badge 1 -->
+    <div class="w-full max-w-sm ml-auto bg-primary-container/40 backdrop-blur-md border border-machined-silver/20 p-6 flex items-center gap-6 float-element hover:bg-primary-container/60 transition-colors shadow-xl">
+        <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-tertiary-fixed to-tertiary-fixed-dim rounded flex items-center justify-center shadow-lg">
+            <span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+        </div>
+        <div>
+            <div class="font-label-caps text-on-primary-container uppercase text-[10px] tracking-widest mb-1">Global Recognition</div>
+            <div class="text-on-primary font-bold text-lg leading-tight">Best Tooling Brand 2025</div>
+            <div class="text-tertiary-fixed text-sm mt-1">Industry Excellence Awards</div>
+        </div>
+    </div>
+
+    <!-- Award Badge 2 -->
+    <div class="w-full max-w-sm ml-auto bg-primary-container/40 backdrop-blur-md border border-machined-silver/20 p-6 flex items-center gap-6 float-element shadow-xl" style="animation-delay: -3s;">
+        <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blueprint-blue to-primary-container border border-machined-silver/30 rounded flex items-center justify-center shadow-lg">
+            <span class="material-symbols-outlined text-tertiary-fixed text-4xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+        </div>
+        <div>
+            <div class="font-label-caps text-on-primary-container uppercase text-[10px] tracking-widest mb-1">Quality Assurance</div>
+            <div class="text-on-primary font-bold text-lg leading-tight">Zero-Defect Guarantee</div>
+            <div class="text-tertiary-fixed text-sm mt-1">ISO 9001:2015 & AS9100D</div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+<!-- Trust Signals Slider -->
+<section class="relative z-10 py-12 bg-surface-container/90 backdrop-blur-md border-b border-machined-silver overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<p class="text-center font-label-caps text-label-caps text-on-surface-variant uppercase mb-10 tracking-[0.2em]">Trusted by Global Leaders</p>
+<div class="flex justify-between items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-700 overflow-x-auto no-scrollbar">
+<img class="h-8 w-auto" data-alt="Minimalist corporate logo of a global automotive manufacturing leader in vector style, clean lines, monochrome navy blue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0O8LF68BqOWiG18BBzVU-rGJ_i2YG50CWjwd1IjJNvWdhrhOXNJdceaEHzv3ULDQnqzrZL3HK9JaPZyFH04IwyCbNelJ025crcOYyzZVnMoSiuY1hr7mpXCnLOYU18N9AR9W04r0su0ZfLLkaoxosONSj7hxTqZeranMt65Co_DpoxwBwdQdBSPecTey3aBC4G2jEMG_mQMgc4VHd9L853tuug_YPchO5hDuEKZM-VTLisykOxK4W"/>
+<img class="h-10 w-auto" data-alt="Sleek corporate logo for an aerospace engineering firm, minimalist geometric design, professional industrial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBId39H5DYeQcfX_nBp5Uq11I4ckw3S9BzIKbcyIWlCbfJ7NipzU3Mn4lGylCVsTtbbOCadnYUbhu9coqIzWafN5flW8iRlWUEGwBHkMl09x8ow82tElAgdZc2MLoerazTsVXOKpBkocmfOZnkrLCrICB7QRTvj_-LwIeeUMXp-O4wXo1tGHL02MZaG0-mhFYwdDnDeo0KvFV-k3n54elKkk89_m4yuRjknTJ5Eq2aCDd5fE6F0ThWK"/>
+<img class="h-8 w-auto" data-alt="Industrial energy corporation logo, bold typography with a technical icon, clean and corporate appearance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASfxwI_VEN5mJAhJ7ARjN5ILXAJpevP_ht9GxVJp5Na4QTiEZtNp06IFImV4h62g-IQpLKmSGpr-GaoJN7bV-BpCHie_3fm61cZEXpxgQmqqnBXAFxjOiGQhjIzvagrDO3Mnr7uySOVVAc-bzjDP4TLZGcUdj-7f2ZWf5zjagwejEq9BNjCHSEm2YWr_ffm2kAXbkvHhHlJwUzbYnDT6ZWYKWhmtHFqzLqli5Ij8RDJIuG88YPhAEg"/>
+<img class="h-9 w-auto" data-alt="Modern medical technology company logo, minimalist blue and white design, sophisticated medical engineering brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnRk82GTxiTXKid9gMulFXPymUzye7MprWOo8JnJ1QJMM19NJXEPV5aUlhu99BaAKM-_x4xwjrpwYO9k-zt-lZPpBKWyg5WM-5u77tXOnNaL_Q8YdCHOHTGv6hE7TYoGXqcPzCi-szC-WDOiD0_4ku-m3s5H_Et84tK9cl00ndgvobuWd9L96WOvnB5v_MoZtSqtGSJbHDB_vWBsn1fE0ZQwdVioizjLoXnb7SQbCQC5X_ssSO-pfr"/>
+<img class="h-8 w-auto" data-alt="Precision manufacturing company logo, blueprint inspired graphics, professional industrial identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChkbmHkEa4ckiQxk1cr8KRn_VS0Enmf5jpu87R1ai-MA7oQbURpRKGq2dp3PKFEJGXuFh-Er98BcaZDVKfi8POWrnC3EdaZCDiQRAYA6a8AiVt0g5tetc3xh6Ar-Cmc8p-LNsEznnPFRcfA5arKj2oiOx78QwW0JBCepjDKvAtWCrwGa59YbwNZk2IPe-IF_e0KxKTcZfpXTSJC0yFG3StlGIPs0yozh7njB2caAKOTEWsvEUMDHGn"/>
+</div>
+</div>
+</section>
+<!-- Industry Experience Bento -->
+<section class="relative z-10 py-24 bg-surface/90 backdrop-blur-md">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="mb-16 reveal">
+<h2 class="font-display-lg text-headline-md text-primary mb-4">Sectors We Serve</h2>
+<div class="w-20 h-1 bg-tertiary-fixed"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Automotive -->
+<div class="md:col-span-8 group relative overflow-hidden h-[400px] reveal machined-border">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close-up high-detail photograph of a high-performance automotive engine block component under soft, dramatic industrial lighting. The surface shows precision machining textures and metallic sheen, reflecting a professional light-mode aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDjYAdU0zXApZ5jc46PLKiBMODa00YUOmgwzr1CI_BnoASS4TJVAVoA2uzInAcBy314wdAS6rlnZle1-AhvN4I3nSMUmV4WSKCSS3ddQRhhSMCs50BMUcH_eP43AdywxnqoYNJnQaml-bggoreps-uVsuccA4UzKQ1O0eR-PjHlRBsYBHkpZGgKCqhlFbycsrxh3M8ceCTNa2-VdyNes6N_8shMpVbNmsuf8uBu9m7vHPDtt83VvEHA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex flex-col justify-end p-10">
+<h3 class="text-on-primary font-headline-sm mb-2">Automotive</h3>
+<p class="text-on-primary-container max-w-md">Precision molds and tooling for high-performance combustion and EV powertrain systems.</p>
+</div>
+</div>
+<!-- Aerospace -->
+<div class="md:col-span-4 group relative overflow-hidden h-[400px] reveal machined-border" style="transition-delay: 150ms;">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A macro shot of a complex titanium aerospace turbine blade assembly, showing intricate engineering details. Bright, high-key lighting creates a clean, world-class industrial feel, highlighting the perfection of the machined edges." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZiC3OsOZHdRzrYaZn844zIIY44gXrLgpLexz9jjT3aExhehL6Ng6GX3yHwgMMezZY9eI7jIQ9K2c46uJ_myHnqQ1JI3bGCurwpheEpD7c6ayXoBTuByy25Om79cy5i_uffjX5URUjpPqmJSeqci0VNWi3XWnJDaZWQhzJq-ztBL18ZSJAWcfHtxVhVg1sfEvwVCJyR5BXusbASa7_AIjqjrPqW69104RA34pjn966XajaffRGhhQo')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex flex-col justify-end p-8">
+<h3 class="text-on-primary font-headline-sm mb-2">Aerospace</h3>
+<p class="text-on-primary-container">Critical tolerance components for flight-safe systems and propulsion.</p>
+</div>
+</div>
+<!-- Medical -->
+<div class="md:col-span-4 group relative overflow-hidden h-[400px] reveal machined-border" style="transition-delay: 250ms;">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="High-precision medical instruments and surgical implants displayed on a clean white sterile surface. The lighting is soft and clinical, showcasing the ultra-fine finish and immaculate quality of the stainless steel surfaces." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCOUgcuEFYU9xB1bNIyem-uPR3Udx7Hkj0Gi6b9g2G2ds3EV-AlxEGUjZS05Cm67PF2sc92hlF0kkp2EF3L_ka90IoHWGYK2sZfsTRRCsz_HTFXpUvKM6OHVrUi_1iVHxB6V2tnhUQe0l07DW_4oA71-ZAr-OmxJ6wGuuqSCRXJVz8fD72ACB-i8eq5cp9wq6mWJ8SqUghARH7SgsxW-WnZCkFMBo9Kd4tD5s2gcmULZT-Sd8KDZ6VY')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex flex-col justify-end p-8">
+<h3 class="text-on-primary font-headline-sm mb-2">Medical</h3>
+<p class="text-on-primary-container">Surgical-grade precision for life-saving medical devices and diagnostics.</p>
+</div>
+</div>
+<!-- Energy -->
+<div class="md:col-span-8 group relative overflow-hidden h-[400px] reveal machined-border" style="transition-delay: 350ms;">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Large-scale industrial renewable energy infrastructure, specifically a wind turbine hub interior being inspected. The scene is bright and professional, emphasizing the massive scale and robust engineering required for global energy sectors." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJsUBJVicm2E6P4pMDbt75qgHm2NCK8QmqxCxOJSY2qGRjRBxaTs3roWHFZvmt533L514w1cH4e7WLGljLxNwJ5So3p96e32gWq02ahLw5XkSs-jVlB28XNwrPMzo2trDk9UfUkOJ8oIBg9csm5UW-eewdJ4wvpcwOgn1eg_L6SZA4jPyX35KrWf-uPnbvJ9tp2Nwt5Pexin4VmrVop_BG6Q6u31IdW5rPHlqC4Pd6MuvA_oiAaQe6')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex flex-col justify-end p-10">
+<h3 class="text-on-primary font-headline-sm mb-2">Energy</h3>
+<p class="text-on-primary-container max-w-md">Robust tooling solutions for wind, solar, and next-generation power grid infrastructure.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Product Showcase -->
+<section class="relative z-10 py-24 bg-surface/95 backdrop-blur-md" id="product-showcase">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+    <div class="text-center mb-8 reveal">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.3em]">Our Arsenal</span>
+        <h2 class="font-display-lg text-headline-md text-primary mt-4">Precision Tooling Products</h2>
+        <p class="font-body-lg text-on-surface-variant mt-4 max-w-2xl mx-auto">Every tool engineered to outperform. Hover to explore specifications.</p>
+    </div>
+
+    <!-- Category Filter Bar -->
+    <div class="flex flex-wrap justify-center gap-3 mb-16 reveal" style="transition-delay: 100ms;">
+        <button class="product-filter-btn active font-label-caps text-[11px] uppercase tracking-widest px-6 py-2.5 border border-machined-silver transition-all duration-300 bg-primary text-on-primary" data-filter="all">All Products</button>
+        <button class="product-filter-btn font-label-caps text-[11px] uppercase tracking-widest px-6 py-2.5 border border-machined-silver transition-all duration-300 bg-transparent text-on-surface-variant hover:bg-primary hover:text-on-primary" data-filter="cutting">Cutting Tools</button>
+        <button class="product-filter-btn font-label-caps text-[11px] uppercase tracking-widest px-6 py-2.5 border border-machined-silver transition-all duration-300 bg-transparent text-on-surface-variant hover:bg-primary hover:text-on-primary" data-filter="mold">Mold & Die</button>
+        <button class="product-filter-btn font-label-caps text-[11px] uppercase tracking-widest px-6 py-2.5 border border-machined-silver transition-all duration-300 bg-transparent text-on-surface-variant hover:bg-primary hover:text-on-primary" data-filter="fixture">Fixtures</button>
+        <button class="product-filter-btn font-label-caps text-[11px] uppercase tracking-widest px-6 py-2.5 border border-machined-silver transition-all duration-300 bg-transparent text-on-surface-variant hover:bg-primary hover:text-on-primary" data-filter="custom">Custom</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid">
+
+        <!-- Product 1: CNC End Mill -->
+        <div class="product-card group relative overflow-hidden bg-surface border border-machined-silver machined-border reveal cursor-pointer" data-category="cutting" style="transition-delay: 0ms; view-transition-name: product-1;">
+            <div class="relative h-[320px] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800" alt="CNC End Mill" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+                <div class="absolute top-4 left-4 bg-primary/80 backdrop-blur-sm px-3 py-1">
+                    <span class="font-label-caps text-[10px] text-tertiary-fixed uppercase tracking-widest">Best Seller</span>
+                </div>
+                <!-- Hover Overlay with Tech Specs -->
+                <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                    <div class="translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Material</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">Tungsten Carbide</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Tolerance</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">±0.002mm</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Coating</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">TiAlN Nano</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Max RPM</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">24,000</div>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 font-button text-button text-tertiary-fixed uppercase tracking-wider group/link">
+                            View Full Specs <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="font-headline-sm text-primary mb-1">Precision End Mills</h3>
+                <p class="font-body-sm text-on-surface-variant">Multi-flute carbide end mills for high-speed aerospace & automotive machining.</p>
+                <div class="flex items-center justify-between mt-4 pt-4 border-t border-machined-silver/50">
+                    <span class="font-label-caps text-[10px] text-secondary uppercase tracking-widest">4 Variants</span>
+                    <span class="material-symbols-outlined text-secondary text-xl group-hover:text-primary transition-colors">arrow_outward</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 2: Injection Mold -->
+        <div class="product-card group relative overflow-hidden bg-surface border border-machined-silver machined-border reveal cursor-pointer" data-category="mold" style="transition-delay: 100ms; view-transition-name: product-2;">
+            <div class="relative h-[320px] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Injection Mold" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+                <div class="absolute top-4 left-4 bg-tertiary-fixed/90 backdrop-blur-sm px-3 py-1">
+                    <span class="font-label-caps text-[10px] text-primary uppercase tracking-widest">Premium Tier</span>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                    <div class="translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Steel Grade</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">P20 / H13</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Cavity</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">Multi-Cavity</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Surface</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">Mirror Polish</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Life Cycle</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">1M+ Shots</div>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 font-button text-button text-tertiary-fixed uppercase tracking-wider group/link">
+                            View Full Specs <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="font-headline-sm text-primary mb-1">Injection Mold Systems</h3>
+                <p class="font-body-sm text-on-surface-variant">High-cavity precision molds for automotive, consumer, and medical plastic components.</p>
+                <div class="flex items-center justify-between mt-4 pt-4 border-t border-machined-silver/50">
+                    <span class="font-label-caps text-[10px] text-secondary uppercase tracking-widest">6 Variants</span>
+                    <span class="material-symbols-outlined text-secondary text-xl group-hover:text-primary transition-colors">arrow_outward</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 3: Press Die Tool -->
+        <div class="product-card group relative overflow-hidden bg-surface border border-machined-silver machined-border reveal cursor-pointer" data-category="mold" style="transition-delay: 200ms; view-transition-name: product-3;">
+            <div class="relative h-[320px] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&q=80&w=800" alt="Press Die Tool" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                    <div class="translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Material</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">D2 Tool Steel</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Hardness</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">58-62 HRC</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Process</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">Wire EDM</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Tonnage</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">Up to 500T</div>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 font-button text-button text-tertiary-fixed uppercase tracking-wider group/link">
+                            View Full Specs <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="font-headline-sm text-primary mb-1">Progressive Press Dies</h3>
+                <p class="font-body-sm text-on-surface-variant">High-tonnage stamping dies for sheet metal forming in automotive body panels.</p>
+                <div class="flex items-center justify-between mt-4 pt-4 border-t border-machined-silver/50">
+                    <span class="font-label-caps text-[10px] text-secondary uppercase tracking-widest">3 Variants</span>
+                    <span class="material-symbols-outlined text-secondary text-xl group-hover:text-primary transition-colors">arrow_outward</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 4: Jigs & Fixtures -->
+        <div class="product-card group relative overflow-hidden bg-surface border border-machined-silver machined-border reveal cursor-pointer" data-category="fixture" style="transition-delay: 0ms; view-transition-name: product-4;">
+            <div class="relative h-[320px] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800" alt="Jigs and Fixtures" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                    <div class="translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Material</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">EN31 Alloy</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Repeatability</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">±0.01mm</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Clamping</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">Hydraulic</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Modular</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">Yes</div>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 font-button text-button text-tertiary-fixed uppercase tracking-wider group/link">
+                            View Full Specs <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="font-headline-sm text-primary mb-1">Jigs & Fixtures</h3>
+                <p class="font-body-sm text-on-surface-variant">Modular clamping and alignment fixtures for repeatable, error-free production runs.</p>
+                <div class="flex items-center justify-between mt-4 pt-4 border-t border-machined-silver/50">
+                    <span class="font-label-caps text-[10px] text-secondary uppercase tracking-widest">5 Variants</span>
+                    <span class="material-symbols-outlined text-secondary text-xl group-hover:text-primary transition-colors">arrow_outward</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 5: Drill Bits -->
+        <div class="product-card group relative overflow-hidden bg-surface border border-machined-silver machined-border reveal cursor-pointer" data-category="cutting" style="transition-delay: 100ms; view-transition-name: product-5;">
+            <div class="relative h-[320px] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&q=80&w=800" alt="Industrial Drill Bits" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                    <div class="translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Substrate</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">Micro-Grain WC</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Diameter</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">0.5 – 25mm</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Coating</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">AlCrN</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Coolant</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">Through-Tool</div>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 font-button text-button text-tertiary-fixed uppercase tracking-wider group/link">
+                            View Full Specs <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="font-headline-sm text-primary mb-1">Industrial Drill Systems</h3>
+                <p class="font-body-sm text-on-surface-variant">Through-coolant carbide drills for deep-hole and high-feed applications.</p>
+                <div class="flex items-center justify-between mt-4 pt-4 border-t border-machined-silver/50">
+                    <span class="font-label-caps text-[10px] text-secondary uppercase tracking-widest">8 Variants</span>
+                    <span class="material-symbols-outlined text-secondary text-xl group-hover:text-primary transition-colors">arrow_outward</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 6: Custom Tooling -->
+        <div class="product-card group relative overflow-hidden bg-primary border border-tertiary-fixed/30 machined-border reveal cursor-pointer" data-category="custom" style="transition-delay: 200ms; view-transition-name: product-6;">
+            <div class="relative h-[320px] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&q=80&w=800" alt="Custom Tooling" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 opacity-80" />
+                <div class="absolute top-4 left-4 bg-tertiary-fixed/90 backdrop-blur-sm px-3 py-1">
+                    <span class="font-label-caps text-[10px] text-primary uppercase tracking-widest">Bespoke</span>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                    <div class="translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Lead Time</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">4–8 Weeks</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">R&D Support</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">End-to-End</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">CAD/CAM</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">Included</div>
+                            </div>
+                            <div class="bg-primary-container/50 backdrop-blur-sm p-2.5 border border-machined-silver/20">
+                                <div class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest">Prototype</div>
+                                <div class="text-tertiary-fixed font-bold text-sm mt-0.5">3D Printed</div>
+                            </div>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 font-button text-button text-tertiary-fixed uppercase tracking-wider group/link">
+                            Start Project <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="font-headline-sm text-on-primary mb-1">Custom Engineering</h3>
+                <p class="font-body-sm text-on-primary-container">Bespoke tooling designed from scratch. Tell us the problem — we engineer the solution.</p>
+                <div class="flex items-center justify-between mt-4 pt-4 border-t border-machined-silver/20">
+                    <span class="font-label-caps text-[10px] text-tertiary-fixed uppercase tracking-widest">Request Quote</span>
+                    <span class="material-symbols-outlined text-tertiary-fixed text-xl group-hover:translate-x-1 transition-transform">arrow_outward</span>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /product-grid -->
+</div>
+</section>
+
+
+
+<!-- Heavy-Duty Tooling Solutions (Interactive) -->
+<section class="relative z-10 py-16 md:py-24 bg-primary text-on-primary border-y border-machined-silver/20 overflow-hidden" id="heavy-duty-section">
+    <!-- Dynamic Background Images -->
+    <div class="absolute inset-0 -z-10">
+        <div class="absolute inset-0 bg-primary/80 z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-transparent z-10"></div>
+        
+        <img id="hd-img-1" src="https://images.unsplash.com/photo-1565158673752-16e537df126b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Heavy Milling" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-30 hd-bg-image" />
+        <img id="hd-img-2" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Large Boring" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 hd-bg-image" />
+        <img id="hd-img-3" src="https://images.unsplash.com/photo-1532054045558-7e780cfa3db3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Gear Cutting" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 hd-bg-image" />
+        <img id="hd-img-4" src="https://images.unsplash.com/photo-1504917595217-d4f3e69f8863?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Die Machining" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 hd-bg-image" />
+    </div>
+
+    <div class="max-w-container-max mx-auto px-margin-desktop relative z-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left: Title and Data Reveal -->
+            <div class="lg:col-span-5 reveal">
+                <span class="font-label-caps text-label-caps text-tertiary-fixed uppercase tracking-[0.3em]">Extreme Scale</span>
+                <h2 class="font-display-lg text-headline-md mt-4 mb-6">Heavy-Duty Material Removal</h2>
+                <p class="font-body-lg text-on-primary-container mb-12">Engineered for massive industrial applications. Hover over a capability to see the performance data.</p>
+                
+                <!-- Dynamic Data Display -->
+                <div class="bg-surface-inverse/50 backdrop-blur-md p-8 border-l-4 border-tertiary-fixed shadow-2xl min-h-[160px] flex flex-col justify-center">
+                    <h4 id="hd-focus-title" class="font-headline-sm text-xl mb-3 text-tertiary-fixed transition-all duration-300">High-Feed Roughing Cutters</h4>
+                    <div class="flex items-end gap-3 transition-all duration-300" id="hd-data-container">
+                        <span class="font-display-lg text-4xl font-bold text-on-primary" id="hd-stat-value">30</span>
+                        <span class="font-headline-sm text-xl text-on-primary pb-1" id="hd-stat-unit">%</span>
+                    </div>
+                    <p id="hd-stat-desc" class="font-body-sm text-on-primary-container mt-2">Cycle Time Reduction on 5-Ton Steel Forgings</p>
+                </div>
+            </div>
+
+            <!-- Right: Interactive List -->
+            <div class="lg:col-span-6 lg:col-start-7">
+                <div class="space-y-4 reveal delay-100">
+                    
+                    <div class="hd-item group cursor-pointer border border-machined-silver/20 bg-surface-inverse/20 backdrop-blur-sm p-6 hover:bg-surface hover:text-primary transition-all duration-300" data-index="1" data-title="High-Feed Roughing Cutters" data-stat="30" data-unit="%" data-desc="Cycle Time Reduction on 5-Ton Steel Forgings">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-headline-sm text-lg uppercase tracking-wide group-hover:text-primary transition-colors">1. Heavy-Duty Milling & Forging</h3>
+                            <span class="material-symbols-outlined text-tertiary-fixed group-hover:text-primary transform group-hover:translate-x-2 transition-all">arrow_forward</span>
+                        </div>
+                    </div>
+
+                    <div class="hd-item group cursor-pointer border border-machined-silver/20 bg-surface-inverse/20 backdrop-blur-sm p-6 hover:bg-surface hover:text-primary transition-all duration-300" data-index="2" data-title="Deep-Hole Boring Solutions" data-stat="10" data-unit="xD" data-desc="Vibration-Free Stability Overhangs">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-headline-sm text-lg uppercase tracking-wide group-hover:text-primary transition-colors">2. Large-Scale Turning & Boring</h3>
+                            <span class="material-symbols-outlined text-tertiary-fixed group-hover:text-primary transform group-hover:translate-x-2 transition-all">arrow_forward</span>
+                        </div>
+                    </div>
+
+                    <div class="hd-item group cursor-pointer border border-machined-silver/20 bg-surface-inverse/20 backdrop-blur-sm p-6 hover:bg-surface hover:text-primary transition-all duration-300" data-index="3" data-title="Custom Gear Hobbing Tools" data-stat="12" data-unit="Class" data-desc="AGMA Precision on 5-Meter Diameter Gears">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-headline-sm text-lg uppercase tracking-wide group-hover:text-primary transition-colors">3. Industrial Gear Cutting</h3>
+                            <span class="material-symbols-outlined text-tertiary-fixed group-hover:text-primary transform group-hover:translate-x-2 transition-all">arrow_forward</span>
+                        </div>
+                    </div>
+
+                    <div class="hd-item group cursor-pointer border border-machined-silver/20 bg-surface-inverse/20 backdrop-blur-sm p-6 hover:bg-surface hover:text-primary transition-all duration-300" data-index="4" data-title="Large-Format Die Machining" data-stat="0.4" data-unit="µm" data-desc="Surface Finish on 10-Ton Blocks">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-headline-sm text-lg uppercase tracking-wide group-hover:text-primary transition-colors">4. Massive Mold & Die Machining</h3>
+                            <span class="material-symbols-outlined text-tertiary-fixed group-hover:text-primary transform group-hover:translate-x-2 transition-all">arrow_forward</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Manufacturing Process (Interactive) -->
+<section class="relative z-10 py-24 bg-surface/90 backdrop-blur-md border-y border-machined-silver/50" id="process-section">
+    <div class="max-w-container-max mx-auto px-margin-desktop">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            
+            <!-- Left Side: Interactive Steps -->
+            <div class="reveal">
+                <span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.3em]">Our Process</span>
+                <h2 class="font-display-lg text-headline-md text-primary mt-4 mb-6">Engineered for Perfection</h2>
+                <p class="font-body-lg text-on-surface-variant mb-12">Our multi-stage manufacturing process combines decade-long expertise with cutting-edge robotic automation. Select a stage to explore.</p>
+                
+                <div class="relative space-y-0">
+                    <!-- Vertical Connecting Line -->
+                    <div class="absolute left-6 top-10 bottom-10 w-0.5 bg-machined-silver/30 -z-10"></div>
+                    <!-- Animated Progress Line -->
+                    <div class="absolute left-6 top-10 w-0.5 bg-primary -z-10 transition-all duration-500 ease-out" id="process-progress-line" style="height: 0%;"></div>
+
+                    <!-- Step 1 -->
+                    <div class="process-step cursor-pointer group py-6 relative" data-step="1">
+                        <div class="flex gap-6 items-start">
+                            <div class="step-indicator w-12 h-12 flex-shrink-0 bg-primary text-on-primary rounded-sm flex items-center justify-center font-label-caps text-xl transition-all duration-300 shadow-lg ring-4 ring-surface">01</div>
+                            <div class="pt-2">
+                                <h4 class="step-title font-headline-sm text-xl mb-2 text-primary transition-colors">Design & Simulation</h4>
+                                <p class="text-body-sm text-on-surface-variant">Digital twin creation and stress-test simulation using high-fidelity CAD/CAM software to predict and eliminate failure points before metal is ever cut.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="process-step cursor-pointer group py-6 relative opacity-60 hover:opacity-100 transition-opacity" data-step="2">
+                        <div class="flex gap-6 items-start">
+                            <div class="step-indicator w-12 h-12 flex-shrink-0 bg-surface border-2 border-machined-silver text-secondary rounded-sm flex items-center justify-center font-label-caps text-xl transition-all duration-300 ring-4 ring-surface">02</div>
+                            <div class="pt-2">
+                                <h4 class="step-title font-headline-sm text-xl mb-2 text-secondary group-hover:text-primary transition-colors">Precision Machining</h4>
+                                <p class="text-body-sm text-on-surface-variant">5-axis simultaneous CNC machining and linear-motor EDM wire cutting within climate-controlled facilities holding ±0.5°C temperature stability.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="process-step cursor-pointer group py-6 relative opacity-60 hover:opacity-100 transition-opacity" data-step="3">
+                        <div class="flex gap-6 items-start">
+                            <div class="step-indicator w-12 h-12 flex-shrink-0 bg-surface border-2 border-machined-silver text-secondary rounded-sm flex items-center justify-center font-label-caps text-xl transition-all duration-300 ring-4 ring-surface">03</div>
+                            <div class="pt-2">
+                                <h4 class="step-title font-headline-sm text-xl mb-2 text-secondary group-hover:text-primary transition-colors">Rigorous QC</h4>
+                                <p class="text-body-sm text-on-surface-variant">Coordinate Measuring Machine (CMM) validation and non-contact optical profilometry inspection to ensure geometries match the digital twin to 1-micron accuracy.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Dynamic Image -->
+            <div class="reveal md:pl-10" style="transition-delay: 200ms;">
+                <div class="relative h-[600px] w-full bg-machined-silver/10 rounded-sm overflow-hidden border border-machined-silver/30 shadow-2xl">
+                    <div class="absolute inset-4 border border-dashed border-primary/20 z-10 pointer-events-none"></div>
+                    
+                    <!-- Images Container -->
+                    <div class="relative w-full h-full">
+                        <img id="process-img-1" class="process-img absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out opacity-100 scale-100 filter grayscale-[20%]" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="CAD Design and Simulation on monitor" />
+                        
+                        <img id="process-img-2" class="process-img absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out opacity-0 scale-105 filter grayscale-[20%]" src="https://images.unsplash.com/photo-1565155658110-18e426543b35?auto=format&fit=crop&q=80&w=800" alt="CNC Precision Machining" />
+                        
+                        <img id="process-img-3" class="process-img absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out opacity-0 scale-105 filter grayscale-[20%]" src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&q=80&w=800" alt="CMM Quality Control Inspection" />
+                    </div>
+
+                    <!-- ISO Badge Overlay -->
+                    <div class="absolute bottom-8 right-8 bg-surface/90 backdrop-blur-md p-6 shadow-lg max-w-[220px] border-l-4 border-primary z-20">
+                        <span class="material-symbols-outlined text-primary mb-2 text-3xl">verified</span>
+                        <p class="text-primary font-bold text-sm leading-tight">ISO 9001:2015 MSME Certified Process</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Technical Capabilities Data Hub -->
+<section class="relative z-10 py-28 bg-primary overflow-hidden" id="tech-hub">
+    <!-- Subtle blueprint grid overlay -->
+    <div class="absolute inset-0 blueprint-grid opacity-10 pointer-events-none"></div>
+    
+    <div class="max-w-container-max mx-auto px-margin-desktop relative">
+        <!-- Section Header -->
+        <div class="text-center mb-16 reveal">
+            <span class="font-label-caps text-label-caps text-tertiary-fixed uppercase tracking-[0.3em]">Technical Hub</span>
+            <h2 class="font-display-lg text-headline-md text-on-primary mt-4">Engineering Specifications</h2>
+            <p class="font-body-lg text-on-primary-container mt-4 max-w-2xl mx-auto">Hard numbers. No guesswork. Every specification verified through CMM validation and certified testing.</p>
+        </div>
+
+        <!-- Tabbed Interface -->
+        <div class="reveal" style="transition-delay: 100ms;">
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap justify-center gap-1 mb-12 bg-primary-container/30 backdrop-blur-sm p-1.5 mx-auto max-w-3xl border border-machined-silver/10">
+                <button class="tech-tab-btn active font-label-caps text-[11px] uppercase tracking-widest px-6 py-3 transition-all duration-300 bg-tertiary-fixed text-primary flex-1 min-w-[140px]" data-tab="machining">
+                    <span class="material-symbols-outlined text-sm align-middle mr-1">precision_manufacturing</span> Machining
+                </button>
+                <button class="tech-tab-btn font-label-caps text-[11px] uppercase tracking-widest px-6 py-3 transition-all duration-300 text-on-primary-container hover:text-tertiary-fixed flex-1 min-w-[140px]" data-tab="materials">
+                    <span class="material-symbols-outlined text-sm align-middle mr-1">layers</span> Materials
+                </button>
+                <button class="tech-tab-btn font-label-caps text-[11px] uppercase tracking-widest px-6 py-3 transition-all duration-300 text-on-primary-container hover:text-tertiary-fixed flex-1 min-w-[140px]" data-tab="quality">
+                    <span class="material-symbols-outlined text-sm align-middle mr-1">verified</span> Quality
+                </button>
+                <button class="tech-tab-btn font-label-caps text-[11px] uppercase tracking-widest px-6 py-3 transition-all duration-300 text-on-primary-container hover:text-tertiary-fixed flex-1 min-w-[140px]" data-tab="machines">
+                    <span class="material-symbols-outlined text-sm align-middle mr-1">factory</span> Machine Park
+                </button>
+            </div>
+
+            <!-- Tab Contents Wrapper -->
+            <div class="relative w-full">
+            
+            <!-- Tab Content: Machining -->
+            <div class="tech-tab-content transition-all duration-500 ease-out opacity-100 translate-y-0 pointer-events-auto relative w-full" id="tab-machining">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Main Specs Table -->
+                    <div class="lg:col-span-2 bg-primary-container/40 backdrop-blur-md border border-machined-silver/15 p-8">
+                        <h3 class="font-headline-sm text-on-primary mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">build</span>
+                            CNC Machining Capabilities
+                        </h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="border-b border-machined-silver/20">
+                                        <th class="text-left py-3 px-4 font-label-caps text-[10px] text-tertiary-fixed uppercase tracking-widest">Parameter</th>
+                                        <th class="text-left py-3 px-4 font-label-caps text-[10px] text-tertiary-fixed uppercase tracking-widest">Standard</th>
+                                        <th class="text-left py-3 px-4 font-label-caps text-[10px] text-tertiary-fixed uppercase tracking-widest">Premium</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-on-primary-container">
+                                    <tr class="border-b border-machined-silver/10 hover:bg-primary-container/60 transition-colors">
+                                        <td class="py-3.5 px-4 text-on-primary font-medium">Positional Accuracy</td>
+                                        <td class="py-3.5 px-4">±0.010mm</td>
+                                        <td class="py-3.5 px-4 text-tertiary-fixed font-bold">±0.002mm</td>
+                                    </tr>
+                                    <tr class="border-b border-machined-silver/10 hover:bg-primary-container/60 transition-colors">
+                                        <td class="py-3.5 px-4 text-on-primary font-medium">Repeatability</td>
+                                        <td class="py-3.5 px-4">±0.005mm</td>
+                                        <td class="py-3.5 px-4 text-tertiary-fixed font-bold">±0.001mm</td>
+                                    </tr>
+                                    <tr class="border-b border-machined-silver/10 hover:bg-primary-container/60 transition-colors">
+                                        <td class="py-3.5 px-4 text-on-primary font-medium">Surface Finish (Ra)</td>
+                                        <td class="py-3.5 px-4">0.8 µm</td>
+                                        <td class="py-3.5 px-4 text-tertiary-fixed font-bold">0.1 µm</td>
+                                    </tr>
+                                    <tr class="border-b border-machined-silver/10 hover:bg-primary-container/60 transition-colors">
+                                        <td class="py-3.5 px-4 text-on-primary font-medium">Max Spindle Speed</td>
+                                        <td class="py-3.5 px-4">12,000 RPM</td>
+                                        <td class="py-3.5 px-4 text-tertiary-fixed font-bold">24,000 RPM</td>
+                                    </tr>
+                                    <tr class="border-b border-machined-silver/10 hover:bg-primary-container/60 transition-colors">
+                                        <td class="py-3.5 px-4 text-on-primary font-medium">Max Travel (X×Y×Z)</td>
+                                        <td class="py-3.5 px-4">800×500×500mm</td>
+                                        <td class="py-3.5 px-4 text-tertiary-fixed font-bold">1500×800×700mm</td>
+                                    </tr>
+                                    <tr class="hover:bg-primary-container/60 transition-colors">
+                                        <td class="py-3.5 px-4 text-on-primary font-medium">Axes</td>
+                                        <td class="py-3.5 px-4">3-Axis</td>
+                                        <td class="py-3.5 px-4 text-tertiary-fixed font-bold">5-Axis Simultaneous</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Key Stats Sidebar -->
+                    <div class="space-y-6">
+                        <div class="bg-primary-container/40 backdrop-blur-md border border-machined-silver/15 p-8 text-center">
+                            <div class="text-5xl font-bold text-tertiary-fixed mb-2 font-display-lg number-counter" data-target="0.002" data-prefix="±" data-suffix="" data-decimals="3">±0.002</div>
+                            <div class="font-label-caps text-[10px] text-on-primary-container uppercase tracking-widest">mm Positional Accuracy</div>
+                            <div class="w-full bg-primary-container/60 h-1.5 mt-4 overflow-hidden">
+                                <div class="h-full bg-tertiary-fixed" style="width: 98%;"></div>
+                            </div>
+                        </div>
+                        <div class="bg-primary-container/40 backdrop-blur-md border border-machined-silver/15 p-8 text-center">
+                            <div class="text-5xl font-bold text-tertiary-fixed mb-2 font-display-lg number-counter" data-target="24" data-prefix="" data-suffix="K" data-decimals="0">24K</div>
+                            <div class="font-label-caps text-[10px] text-on-primary-container uppercase tracking-widest">RPM Max Spindle Speed</div>
+                            <div class="w-full bg-primary-container/60 h-1.5 mt-4 overflow-hidden">
+                                <div class="h-full bg-tertiary-fixed" style="width: 92%;"></div>
+                            </div>
+                        </div>
+                        <div class="bg-primary-container/40 backdrop-blur-md border border-machined-silver/15 p-8 text-center">
+                            <div class="text-5xl font-bold text-tertiary-fixed mb-2 font-display-lg number-counter" data-target="5" data-prefix="" data-suffix="" data-decimals="0">5</div>
+                            <div class="font-label-caps text-[10px] text-on-primary-container uppercase tracking-widest">Axis Simultaneous Control</div>
+                            <div class="w-full bg-primary-container/60 h-1.5 mt-4 overflow-hidden">
+                                <div class="h-full bg-tertiary-fixed" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Materials -->
+            <div class="tech-tab-content transition-all duration-500 ease-out opacity-0 translate-y-4 pointer-events-none absolute inset-x-0 top-0 w-full" id="tab-materials">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 bg-primary-container/40 backdrop-blur-md border border-machined-silver/15 p-8">
+                        <h3 class="font-headline-sm text-on-primary mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">layers</span>
+                            Supported Materials & Alloys
+                        </h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="border-b border-machined-silver/20">
+                                        <th class="text-left py-3 px-4 font-label-caps text-[10px] text-tertiary-fixed uppercase tracking-widest">Material</th>
+                                        <th class="text-left py-3 px-4 font-label-caps text-[10px] text-tertiary-fixed uppercase tracking-widest">Grade</th>
+                                        <th class="text-left py-3 px-4 font-label-caps text-[10px] text-tertiary-fixed uppercase tracking-widest">Hardness</th>
+                                        <th class="text-left py-3 px-4 font-label-caps text-[10px] text-tertiary-fixed uppercase tracking-widest">Application</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-on-primary-container">
+                                    <tr class="border-b border-machined-silver/10 hover:bg-primary-container/60 transition-colors">
+                                        <td class="py-3.5 px-4 text-on-primary font-medium">Tool Steel</td>
+                                        <td class="py-3.5 px-4">D2 / H13 / P20</td>
+                                        <td class="py-3.5 px-4">58–62 HRC</td>
+                                        <td class="py-3.5 px-4 text-tertiary-fixed">Dies, Molds</td>
+                                    </tr>
+                                    <tr class="border-b border-machined-silver/10 hover:bg-primary-container/60 transition-colors">
+                                        <td class="py-3.5 px-4 text-on-primary font-medium">Tungsten Carbide</td>
+                                        <td class="py-3.5 px-4">K10 / K20 / K30</td>
+                                        <td class="py-3.5 px-4">89–92 HRA</td>
+                                        <td class="py-3.5 px-4 text-tertiary-fixed">Cutting Tools</td>
+                                    </tr>
+                                    <tr class="border-b border-machined-silver/10 hover:bg-primary-container/60 transition-colors">
+                                        <td class="py-3.5 px-4 text-on-primary font-medium">Titanium Alloys</td>
+                                        <td class="py-3.5 px-4">Ti-6Al-4V</td>
+                                        <td class="py-3.5 px-4">36 HRC</td>
+                                        <td class="py-3.5 px-4 text-tertiary-fixed">Aerospace</td>
+                                    </tr>
+                                    <tr class="border-b border-machined-silver/10 hover:bg-primary-container/60 transition-colors">
+                                        <td class="py-3.5 px-4 text-on-primary font-medium">Stainless Steel</td>
+                                        <td class="py-3.5 px-4">SS304 / SS316L</td>
+                                        <td class="py-3.5 px-4">25–30 HRC</td>
+                                        <td class="py-3.5 px-4 text-tertiary-fixed">Medical, Food</td>
+                                    </tr>
+                                    <tr class="border-b border-machined-silver/10 hover:bg-primary-container/60 transition-colors">
+                                        <td class="py-3.5 px-4 text-on-primary font-medium">Aluminium</td>
+                                        <td class="py-3.5 px-4">6061-T6 / 7075</td>
+                                        <td class="py-3.5 px-4">95 HB</td>
+                                        <td class="py-3.5 px-4 text-tertiary-fixed">Prototyping</td>
+                                    </tr>
+                                    <tr class="hover:bg-primary-container/60 transition-colors">
+                                        <td class="py-3.5 px-4 text-on-primary font-medium">Inconel / Hastelloy</td>
+                                        <td class="py-3.5 px-4">718 / C-276</td>
+                                        <td class="py-3.5 px-4">40 HRC</td>
+                                        <td class="py-3.5 px-4 text-tertiary-fixed">Energy, Chemical</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Coatings sidebar -->
+                    <div class="space-y-6">
+                        <div class="bg-primary-container/40 backdrop-blur-md border border-machined-silver/15 p-8">
+                            <h4 class="font-headline-sm text-on-primary mb-5 text-lg">Surface Coatings</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between py-2 border-b border-machined-silver/10">
+                                    <span class="text-on-primary-container text-sm">TiAlN Nano</span>
+                                    <span class="text-tertiary-fixed font-bold text-sm">3000°C</span>
+                                </div>
+                                <div class="flex items-center justify-between py-2 border-b border-machined-silver/10">
+                                    <span class="text-on-primary-container text-sm">AlCrN</span>
+                                    <span class="text-tertiary-fixed font-bold text-sm">1100°C</span>
+                                </div>
+                                <div class="flex items-center justify-between py-2 border-b border-machined-silver/10">
+                                    <span class="text-on-primary-container text-sm">DLC (Diamond-Like)</span>
+                                    <span class="text-tertiary-fixed font-bold text-sm">500°C</span>
+                                </div>
+                                <div class="flex items-center justify-between py-2 border-b border-machined-silver/10">
+                                    <span class="text-on-primary-container text-sm">TiN (Titanium Nitride)</span>
+                                    <span class="text-tertiary-fixed font-bold text-sm">600°C</span>
+                                </div>
+                                <div class="flex items-center justify-between py-2">
+                                    <span class="text-on-primary-container text-sm">Chrome Plating</span>
+                                    <span class="text-tertiary-fixed font-bold text-sm">–</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-tertiary-fixed/10 border border-tertiary-fixed/30 p-6 text-center">
+                            <span class="material-symbols-outlined text-tertiary-fixed text-3xl mb-2" style="font-variation-settings: 'FILL' 1;">science</span>
+                            <p class="text-on-primary text-sm font-medium">Need a custom alloy?</p>
+                            <p class="text-on-primary-container text-xs mt-1">Our metallurgy team can source & validate any material.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Quality -->
+            <div class="tech-tab-content transition-all duration-500 ease-out opacity-0 translate-y-4 pointer-events-none absolute inset-x-0 top-0 w-full" id="tab-quality">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-primary-container/40 backdrop-blur-md border border-machined-silver/15 p-8 text-center group hover:border-tertiary-fixed/40 transition-colors">
+                        <span class="material-symbols-outlined text-5xl text-tertiary-fixed mb-4" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        <h4 class="text-on-primary font-bold text-lg mb-2">ISO 9001:2015</h4>
+                        <p class="text-on-primary-container text-sm">Quality Management System certified across all operations.</p>
+                    </div>
+                    <div class="bg-primary-container/40 backdrop-blur-md border border-machined-silver/15 p-8 text-center group hover:border-tertiary-fixed/40 transition-colors">
+                        <span class="material-symbols-outlined text-5xl text-tertiary-fixed mb-4" style="font-variation-settings: 'FILL' 1;">flight</span>
+                        <h4 class="text-on-primary font-bold text-lg mb-2">AS9100D</h4>
+                        <p class="text-on-primary-container text-sm">Aerospace-grade quality standards for flight-critical tooling.</p>
+                    </div>
+                    <div class="bg-primary-container/40 backdrop-blur-md border border-machined-silver/15 p-8 text-center group hover:border-tertiary-fixed/40 transition-colors">
+                        <span class="material-symbols-outlined text-5xl text-tertiary-fixed mb-4" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+                        <h4 class="text-on-primary font-bold text-lg mb-2">ISO 13485</h4>
+                        <p class="text-on-primary-container text-sm">Medical device manufacturing compliance for surgical tooling.</p>
+                    </div>
+                    <div class="bg-primary-container/40 backdrop-blur-md border border-machined-silver/15 p-8 text-center group hover:border-tertiary-fixed/40 transition-colors">
+                        <span class="material-symbols-outlined text-5xl text-tertiary-fixed mb-4" style="font-variation-settings: 'FILL' 1;">eco</span>
+                        <h4 class="text-on-primary font-bold text-lg mb-2">ISO 14001</h4>
+                        <p class="text-on-primary-container text-sm">Environmental management for sustainable manufacturing.</p>
+                    </div>
+                </div>
+                <!-- Inspection Methods -->
+                <div class="mt-10 bg-primary-container/40 backdrop-blur-md border border-machined-silver/15 p-8">
+                    <h3 class="font-headline-sm text-on-primary mb-6 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">search</span>
+                        Inspection & Validation Methods
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 flex-shrink-0 bg-tertiary-fixed/20 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-tertiary-fixed text-xl">straighten</span>
+                            </div>
+                            <div>
+                                <h4 class="text-on-primary font-bold text-sm mb-1">CMM Inspection</h4>
+                                <p class="text-on-primary-container text-xs">Coordinate Measuring Machine validation to 1-micron accuracy on all critical dimensions.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 flex-shrink-0 bg-tertiary-fixed/20 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-tertiary-fixed text-xl">visibility</span>
+                            </div>
+                            <div>
+                                <h4 class="text-on-primary font-bold text-sm mb-1">Optical Profilometry</h4>
+                                <p class="text-on-primary-container text-xs">Non-contact surface roughness measurement for Ra/Rz verification.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 flex-shrink-0 bg-tertiary-fixed/20 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-tertiary-fixed text-xl">lab_profile</span>
+                            </div>
+                            <div>
+                                <h4 class="text-on-primary font-bold text-sm mb-1">Hardness Testing</h4>
+                                <p class="text-on-primary-container text-xs">Rockwell (HRC) and Vickers (HV) testing on all heat-treated components.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Machine Park -->
+            <div class="tech-tab-content transition-all duration-500 ease-out opacity-0 translate-y-4 pointer-events-none absolute inset-x-0 top-0 w-full" id="tab-machines">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-primary-container/40 backdrop-blur-md border border-machined-silver/15 p-8 hover:border-tertiary-fixed/40 transition-colors group">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="material-symbols-outlined text-3xl text-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+                            <span class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest bg-primary-container/60 px-3 py-1">5-Axis</span>
+                        </div>
+                        <h4 class="text-on-primary font-bold text-lg mb-1">DMG MORI DMU 80</h4>
+                        <p class="text-on-primary-container text-sm mb-4">5-axis simultaneous machining center</p>
+                        <div class="space-y-2 text-xs text-on-primary-container">
+                            <div class="flex justify-between"><span>Travel</span><span class="text-tertiary-fixed font-bold">800×600×550mm</span></div>
+                            <div class="flex justify-between"><span>Spindle</span><span class="text-tertiary-fixed font-bold">18,000 RPM</span></div>
+                            <div class="flex justify-between"><span>Accuracy</span><span class="text-tertiary-fixed font-bold">±0.003mm</span></div>
+                        </div>
+                    </div>
+                    <div class="bg-primary-container/40 backdrop-blur-md border border-machined-silver/15 p-8 hover:border-tertiary-fixed/40 transition-colors group">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="material-symbols-outlined text-3xl text-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                            <span class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest bg-primary-container/60 px-3 py-1">Wire EDM</span>
+                        </div>
+                        <h4 class="text-on-primary font-bold text-lg mb-1">Sodick ALC600G</h4>
+                        <p class="text-on-primary-container text-sm mb-4">Linear motor wire EDM machine</p>
+                        <div class="space-y-2 text-xs text-on-primary-container">
+                            <div class="flex justify-between"><span>Travel</span><span class="text-tertiary-fixed font-bold">600×400×350mm</span></div>
+                            <div class="flex justify-between"><span>Wire Dia</span><span class="text-tertiary-fixed font-bold">0.05–0.30mm</span></div>
+                            <div class="flex justify-between"><span>Accuracy</span><span class="text-tertiary-fixed font-bold">±0.001mm</span></div>
+                        </div>
+                    </div>
+                    <div class="bg-primary-container/40 backdrop-blur-md border border-machined-silver/15 p-8 hover:border-tertiary-fixed/40 transition-colors group">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="material-symbols-outlined text-3xl text-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">view_in_ar</span>
+                            <span class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest bg-primary-container/60 px-3 py-1">CMM</span>
+                        </div>
+                        <h4 class="text-on-primary font-bold text-lg mb-1">Zeiss CONTURA</h4>
+                        <p class="text-on-primary-container text-sm mb-4">Bridge-type coordinate measuring machine</p>
+                        <div class="space-y-2 text-xs text-on-primary-container">
+                            <div class="flex justify-between"><span>Range</span><span class="text-tertiary-fixed font-bold">1200×900×800mm</span></div>
+                            <div class="flex justify-between"><span>Resolution</span><span class="text-tertiary-fixed font-bold">0.1 µm</span></div>
+                            <div class="flex justify-between"><span>MPEE</span><span class="text-tertiary-fixed font-bold">1.5 + L/350 µm</span></div>
+                        </div>
+                    </div>
+                    <div class="bg-primary-container/40 backdrop-blur-md border border-machined-silver/15 p-8 hover:border-tertiary-fixed/40 transition-colors group">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="material-symbols-outlined text-3xl text-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">content_cut</span>
+                            <span class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest bg-primary-container/60 px-3 py-1">Turning</span>
+                        </div>
+                        <h4 class="text-on-primary font-bold text-lg mb-1">Mazak INTEGREX i-200</h4>
+                        <p class="text-on-primary-container text-sm mb-4">Multi-tasking turning & milling center</p>
+                        <div class="space-y-2 text-xs text-on-primary-container">
+                            <div class="flex justify-between"><span>Chuck</span><span class="text-tertiary-fixed font-bold">Ø 660mm</span></div>
+                            <div class="flex justify-between"><span>Spindle</span><span class="text-tertiary-fixed font-bold">12,000 RPM</span></div>
+                            <div class="flex justify-between"><span>Turret</span><span class="text-tertiary-fixed font-bold">24 Tools</span></div>
+                        </div>
+                    </div>
+                    <div class="bg-primary-container/40 backdrop-blur-md border border-machined-silver/15 p-8 hover:border-tertiary-fixed/40 transition-colors group">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="material-symbols-outlined text-3xl text-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">cyclone</span>
+                            <span class="font-label-caps text-[9px] text-on-primary-container uppercase tracking-widest bg-primary-container/60 px-3 py-1">Grinding</span>
+                        </div>
+                        <h4 class="text-on-primary font-bold text-lg mb-1">Studer S33</h4>
+                        <p class="text-on-primary-container text-sm mb-4">Universal cylindrical grinder</p>
+                        <div class="space-y-2 text-xs text-on-primary-container">
+                            <div class="flex justify-between"><span>Center Dist</span><span class="text-tertiary-fixed font-bold">1000mm</span></div>
+                            <div class="flex justify-between"><span>Center Ht</span><span class="text-tertiary-fixed font-bold">175mm</span></div>
+                            <div class="flex justify-between"><span>Roundness</span><span class="text-tertiary-fixed font-bold">0.3 µm</span></div>
+                        </div>
+                    </div>
+                    <div class="bg-tertiary-fixed/10 border border-tertiary-fixed/30 p-8 flex flex-col items-center justify-center text-center">
+                        <span class="material-symbols-outlined text-5xl text-tertiary-fixed mb-4" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+                        <h4 class="text-on-primary font-bold text-lg mb-2">25+ More Machines</h4>
+                        <p class="text-on-primary-container text-sm mb-4">Full machine park tour available on request.</p>
+                        <a href="#" class="font-button text-button text-tertiary-fixed uppercase tracking-wider flex items-center gap-1 group">
+                            Request Tour <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /reveal -->
+            </div><!-- /Tab Contents Wrapper -->
+    </div>
+</section>
+
+<!-- SEO Section -->
+<section class="py-20 bg-primary-container text-on-primary">
+<div class="max-w-4xl mx-auto px-margin-mobile text-center reveal">
+<h2 class="font-headline-md text-tertiary-fixed mb-8">What is Precision Tooling?</h2>
+<div class="text-body-lg leading-relaxed text-on-primary-container space-y-6">
+<p class="line-reveal">
+                        Precision tooling refers to the specialized manufacturing of custom instruments, molds, dies, and hardware required to create large-scale industrial components with extremely tight tolerances. At Kawa Tooling Systems, we define this as the marriage of mathematical accuracy and material science.
+                    </p>
+<p class="line-reveal">
+                        In modern manufacturing, where a variation of a single micron can mean the difference between a successful flight and a system failure, precision tooling serves as the bedrock of reliability. Our systems are engineered to withstand millions of cycles while maintaining the exact geometric integrity required by world-class aerospace and medical standards.
+                    </p>
+</div>
+<div class="mt-12 flex justify-center gap-12 border-t border-on-primary-container/20 pt-12">
+<div class="text-center">
+<div class="text-3xl font-bold text-on-primary number-counter" data-target="24" data-prefix="" data-suffix="/7" data-decimals="0">24/7</div>
+<div class="text-xs font-label-caps uppercase text-tertiary-fixed">Support</div>
+</div>
+<div class="text-center">
+<div class="text-3xl font-bold text-on-primary number-counter" data-target="15" data-prefix="" data-suffix="+" data-decimals="0">15+</div>
+<div class="text-xs font-label-caps uppercase text-tertiary-fixed">Global Hubs</div>
+</div>
+<div class="text-center">
+<div class="text-3xl font-bold text-on-primary number-counter" data-target="99.9" data-prefix="" data-suffix="%" data-decimals="1">99.9%</div>
+<div class="text-xs font-label-caps uppercase text-tertiary-fixed">Accuracy</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 relative overflow-hidden bg-surface">
+<div class="absolute inset-0 blueprint-grid opacity-20"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop text-center relative z-10 reveal">
+<h2 class="font-display-lg text-display-lg text-primary mb-6">Ready to optimize your production?</h2>
+<p class="font-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">Contact an expert today to discuss your technical specifications or request a detailed quotation for your next engineering project.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-primary text-on-primary px-10 py-5 font-button text-button uppercase tracking-wider hover:opacity-90 shadow-xl transition-all">
+                        Consult with an Engineer
+                    </button>
+<button class="border-2 border-primary text-primary px-10 py-5 font-button text-button uppercase tracking-wider hover:bg-primary/5 transition-all">
+                        Download Tech Catalog
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Mega-Footer -->
+<footer class="relative bg-primary border-t-4 border-tertiary-fixed pt-24 pb-8 overflow-hidden z-20">
+    <!-- Subtle Background Elements -->
+    <div class="absolute inset-0 blueprint-grid opacity-20 pointer-events-none"></div>
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-tertiary-fixed/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-container-max mx-auto px-margin-desktop relative z-10">
+        <!-- Top Row: Newsletter & Global Reach -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 pb-16 border-b border-primary-container/50">
+            <!-- Newsletter -->
+            <div>
+                <span class="font-label-caps text-label-caps text-tertiary-fixed uppercase tracking-widest mb-2 block">Technical Insider</span>
+                <h3 class="font-headline-md text-on-primary mb-4">Engineering Breakthroughs, Delivered.</h3>
+                <p class="font-body-sm text-on-primary-container mb-6 max-w-md">Join 15,000+ industry professionals receiving our quarterly whitepapers on advanced machining, metallurgy, and automation.</p>
+                <form class="flex gap-2 max-w-md" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Engineering Email Address" class="flex-1 bg-primary-container/50 border border-machined-silver/20 px-4 py-3 text-on-primary font-body-sm focus:outline-none focus:border-tertiary-fixed transition-colors" required>
+                    <button type="submit" class="bg-tertiary-fixed text-primary px-6 py-3 font-button text-button uppercase tracking-wider hover:bg-tertiary-fixed/90 transition-colors">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Global Hubs -->
+            <div class="lg:border-l lg:border-primary-container/50 lg:pl-16">
+                <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-6 block">Global Manufacturing Hubs</span>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 bg-tertiary-fixed rounded-full animate-pulse"></span>
+                            <h4 class="text-on-primary font-bold text-sm">Pune, India (HQ)</h4>
+                        </div>
+                        <p class="text-on-primary-container text-xs font-body-sm leading-relaxed">Phase II, Chakan Industrial Area<br>Maharashtra 410501</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 bg-machined-silver/30 rounded-full"></span>
+                            <h4 class="text-on-primary font-bold text-sm">Munich, Germany</h4>
+                        </div>
+                        <p class="text-on-primary-container text-xs font-body-sm leading-relaxed">Technologiepark 4<br>85748 Garching</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 bg-machined-silver/30 rounded-full"></span>
+                            <h4 class="text-on-primary font-bold text-sm">Detroit, USA</h4>
+                        </div>
+                        <p class="text-on-primary-container text-xs font-body-sm leading-relaxed">Advanced Tech Center<br>Troy, MI 48083</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 bg-machined-silver/30 rounded-full"></span>
+                            <h4 class="text-on-primary font-bold text-sm">Nagoya, Japan</h4>
+                        </div>
+                        <p class="text-on-primary-container text-xs font-body-sm leading-relaxed">Aichi Precision Valley<br>Toyota City 471-8571</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Row: Navigation Links -->
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 py-16 border-b border-primary-container/50">
+            <div class="col-span-2 lg:col-span-1">
+                <div class="font-display-lg text-headline-sm text-tertiary-fixed mb-4">Kawa Systems</div>
+                <p class="font-body-sm text-on-primary-container text-xs mb-6">Engineered for absolute precision. Built for the future of global manufacturing.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container hover:bg-tertiary-fixed hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-sm">share</span>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container hover:bg-tertiary-fixed hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-sm">mail</span>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h5 class="text-on-primary font-bold mb-6 text-xs uppercase tracking-widest">Products</h5>
+                <ul class="space-y-3">
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Precision End Mills</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Injection Molds</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Press Dies</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Jigs & Fixtures</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Custom Tooling</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-on-primary font-bold mb-6 text-xs uppercase tracking-widest">Capabilities</h5>
+                <ul class="space-y-3">
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">5-Axis Machining</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Wire EDM</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Surface Grinding</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">CMM Inspection</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Rapid Prototyping</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-on-primary font-bold mb-6 text-xs uppercase tracking-widest">Company</h5>
+                <ul class="space-y-3">
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="/about.html">About Us</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Leadership</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Careers</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Sustainability</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Investor Relations</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-on-primary font-bold mb-6 text-xs uppercase tracking-widest">Compliance</h5>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 bg-primary-container/30 border border-machined-silver/10 p-2">
+                        <span class="material-symbols-outlined text-tertiary-fixed text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        <div>
+                            <div class="text-on-primary text-[10px] font-bold uppercase tracking-wider">ISO 9001:2015</div>
+                            <div class="text-on-primary-container text-[9px] uppercase tracking-widest">Certified</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-primary-container/30 border border-machined-silver/10 p-2">
+                        <span class="material-symbols-outlined text-tertiary-fixed text-xl" style="font-variation-settings: 'FILL' 1;">flight</span>
+                        <div>
+                            <div class="text-on-primary text-[10px] font-bold uppercase tracking-wider">AS9100D</div>
+                            <div class="text-on-primary-container text-[9px] uppercase tracking-widest">Certified</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Row: Copyright & Legal -->
+        <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="font-body-sm text-on-primary-container text-xs">© 2024 Kawa Tooling Systems Ltd. All rights reserved.</p>
+            
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#" class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors">Privacy Policy</a>
+                <a href="#" class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors">Terms of Service</a>
+                <a href="#" class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors">Cookie Preferences</a>
+                <a href="#" class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors">Supply Chain Act</a>
+            </div>
+
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center gap-2 font-label-caps text-[10px] uppercase tracking-widest text-on-primary hover:text-tertiary-fixed transition-colors group">
+                Back to top
+                <span class="w-8 h-8 rounded-full border border-machined-silver/30 flex items-center justify-center group-hover:border-tertiary-fixed transition-colors">
+                    <span class="material-symbols-outlined text-sm">arrow_upward</span>
+                </span>
+            </button>
+        </div>
+    </div>
+</footer>
+
+<!-- Dynamic Number Counters Script -->
+
+
+<!-- FIXED BACKGROUND 3D GEARS -->
+<div id="threejs-bg-container" class="fixed inset-0 w-full h-full -z-10 pointer-events-none transition-opacity duration-300" style="opacity: 0.4;">
+
+<div id="threejs-canvas" style="width:100%;height:100%"></div>
+
+</div>
+<!-- END FIXED BACKGROUND 3D GEARS -->
+
+</body></html>

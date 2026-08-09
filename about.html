@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kawa Tooling Systems | Corporate Heritage</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="/style.css">
+<style>
+    /* Reveal Typography Animation */
+    .line-reveal { opacity: 0.2; transition: opacity 0.5s ease; }
+    .line-reveal.active { opacity: 1; }
+</style>
+
+    <style>
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+    <script type="module" src="/main.js"></script>
+    
+</head>
+<body class="bg-primary font-body-md text-on-surface overflow-x-hidden">
+
+<!-- TopNavBar with Utility -->
+<header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-500 shadow-none">
+    <!-- Main Header -->
+    <div id="nav-container" class="bg-primary/40 backdrop-blur-xl border-b border-machined-silver/10 h-24 flex items-center transition-all duration-500 hover:bg-primary/70">
+        <div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center w-full">
+            <a href="/index.html" class="font-display-lg text-headline-sm font-bold text-tertiary-fixed flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <!-- Abstract Geometric Logo -->
+                <div class="w-8 h-8 relative flex items-center justify-center">
+                    <div class="absolute inset-0 border-[3px] border-tertiary-fixed rotate-45"></div>
+                    <div class="absolute w-4 h-4 bg-on-primary"></div>
+                </div>
+                Kawa Tooling Systems
+            </a>
+            <nav class="hidden md:flex gap-gutter items-center relative h-full" id="main-nav">
+                <!-- Glowing Indicator -->
+                <div id="nav-indicator" class="absolute bottom-0 h-0.5 bg-tertiary-fixed transition-all duration-300 ease-out shadow-[0_0_8px_rgba(234,179,8,0.6)] pointer-events-none" style="width: 0px; left: 0px; opacity: 0;"></div>
+
+                <!-- Products with mega menu hook (UI Polish) -->
+                <div class="relative group h-full flex items-center nav-item">
+                    <a class="font-button text-button uppercase tracking-wider text-on-primary group-hover:text-tertiary-fixed transition-colors flex items-center gap-1" href="/products.html">
+                        Products
+                    </a>
+                </div>
+                <a class="nav-item font-button text-button uppercase tracking-wider text-on-primary hover:text-tertiary-fixed transition-colors h-full flex items-center" href="/solutions.html">Solutions</a>
+                <a class="nav-item font-button text-button uppercase tracking-wider text-on-primary hover:text-tertiary-fixed transition-colors h-full flex items-center" href="/support.html">Engineering Support</a>
+<a class="nav-item font-button text-button uppercase tracking-wider text-tertiary-fixed transition-colors h-full flex items-center border-b-2 border-tertiary-fixed" href="/about.html">About Us</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="/support.html" class="hidden lg:block bg-tertiary-fixed text-primary px-8 py-3 font-button text-button uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-lg hover:shadow-tertiary-fixed/20 hover:ring-2 hover:ring-tertiary-fixed/50">
+                    Request Quote
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-on-primary p-2 z-[60] relative">
+                    <span class="material-symbols-outlined text-3xl transition-transform duration-300">menu</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-primary/95 backdrop-blur-2xl z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300">
+    <nav class="flex flex-col gap-8 text-center items-center w-full px-6">
+        <a href="/products.html" class="font-display-lg text-4xl text-on-primary hover:text-tertiary-fixed transition-colors block w-full text-center">Products</a>
+        <a href="/solutions.html" class="font-display-lg text-4xl text-on-primary hover:text-tertiary-fixed transition-colors block w-full text-center">Solutions</a>
+        <a class="nav-item font-button text-button uppercase tracking-wider text-on-primary hover:text-tertiary-fixed transition-colors h-full flex items-center" href="/support.html">Engineering Support</a>
+<a href="/about.html" class="font-display-lg text-4xl text-tertiary-fixed transition-colors block w-full text-center">About Us</a>
+        <div class="h-px w-16 bg-machined-silver/30 my-4"></div>
+        <a href="/support.html" class="inline-block bg-tertiary-fixed text-primary px-10 py-4 font-button text-button uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all w-full max-w-xs text-center shadow-lg hover:shadow-tertiary-fixed/20 hover:ring-2 hover:ring-tertiary-fixed/50">
+            Request Quote
+        </a>
+    </nav>
+</div>
+<!-- SideNavBar -->
+<aside class="hidden md:flex fixed right-6 bottom-32 rounded-full w-14 flex-col gap-unit items-center z-40 bg-surface shadow-lg border border-machined-silver p-2">
+<div class="text-[10px] font-label-caps uppercase text-primary mb-2 rotate-90 origin-center whitespace-nowrap">Engineering Support</div>
+<button class="bg-tertiary-fixed text-on-tertiary-fixed rounded-full p-3 hover:scale-110 shadow-md transition-all active:scale-90" title="WhatsApp">
+<span class="material-symbols-outlined">chat</span>
+</button>
+<button class="bg-surface text-primary p-3 rounded-full hover:bg-secondary-container transition-all hover:scale-110" title="Call">
+<span class="material-symbols-outlined">call</span>
+</button>
+<button class="bg-surface text-primary p-3 rounded-full hover:bg-secondary-container transition-all hover:scale-110" title="Email">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</aside>
+
+
+<main class="pt-24 overflow-hidden">
+
+    <!-- Cinematic Hero Section -->
+    <section class="relative py-32 md:py-48 overflow-hidden bg-primary flex items-center justify-center">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2000" alt="Precision CNC machining floor" class="w-full h-full object-cover opacity-30 grayscale mix-blend-luminosity">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-primary/40 pointer-events-none"></div>
+            <div class="absolute inset-0 blueprint-grid pointer-events-none opacity-20"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-container-max mx-auto px-margin-desktop text-center">
+            <div class="reveal">
+                <div class="inline-block px-4 py-1 bg-surface/10 backdrop-blur-sm border border-machined-silver/20 rounded-sm mb-6">
+                    <span class="font-label-caps text-[10px] md:text-label-caps text-machined-silver uppercase tracking-[0.2em]">Corporate Heritage</span>
+                </div>
+                <h1 class="font-display-lg text-5xl md:text-7xl text-on-primary mb-6 leading-tight drop-shadow-2xl">
+                    Precision Forged <span class="text-tertiary-fixed block md:inline">in Tradition.</span>
+                </h1>
+                <p class="font-body-lg text-lg md:text-2xl text-on-primary-container mb-10 max-w-3xl mx-auto font-light">
+                    Three decades of engineering excellence. Zero compromises.
+                </p>
+                <div class="w-24 h-1 bg-tertiary-fixed mx-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Corporate Heritage Timeline (Horizontal Scroll) -->
+    <section class="relative py-24 bg-surface" id="heritage-timeline">
+        <div class="max-w-container-max mx-auto px-margin-desktop mb-16">
+            <div class="reveal">
+                <span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.3em]">Our Journey</span>
+                <h2 class="font-display-lg text-headline-md text-primary mt-4">A Legacy of Innovation</h2>
+            </div>
+        </div>
+
+        <!-- Horizontal Scroll Container -->
+        <div class="w-full overflow-x-auto pb-12 snap-x snap-mandatory scroll-smooth hide-scrollbar px-margin-desktop cursor-grab active:cursor-grabbing" id="timeline-scroll">
+            <div class="flex gap-8 md:gap-16 w-max items-stretch pb-8">
+                
+                <!-- 1992 -->
+                <div class="w-[85vw] md:w-[45vw] lg:w-[30vw] snap-center shrink-0 reveal" style="transition-delay: 100ms;">
+                    <div class="bg-surface border-l-4 border-tertiary-fixed shadow-xl hover:shadow-2xl transition-all duration-500 h-full p-8 md:p-12 relative group">
+                        <div class="absolute -left-6 top-8 w-12 h-12 bg-primary text-tertiary-fixed rounded-full flex items-center justify-center font-display-lg text-xl shadow-lg border-4 border-surface group-hover:scale-110 transition-transform z-10">92</div>
+                        <h3 class="font-display-lg text-4xl text-primary mb-2 mt-4">1992</h3>
+                        <div class="font-label-caps text-xs text-secondary uppercase tracking-widest mb-6">The Foundation</div>
+                        <p class="font-body-md text-on-surface-variant">Founded in a small precision grinding shop, Kawa Tooling Systems began with a singular focus: manufacturing solid carbide end mills that could outlast the competition in aggressive steel applications.</p>
+                    </div>
+                </div>
+
+                <!-- 2008 -->
+                <div class="w-[85vw] md:w-[45vw] lg:w-[30vw] snap-center shrink-0 reveal" style="transition-delay: 200ms;">
+                    <div class="bg-primary border-l-4 border-tertiary-fixed shadow-xl hover:shadow-2xl transition-all duration-500 h-full p-8 md:p-12 relative group">
+                        <div class="absolute inset-0 blueprint-grid opacity-10 pointer-events-none"></div>
+                        <div class="absolute -left-6 top-8 w-12 h-12 bg-tertiary-fixed text-primary rounded-full flex items-center justify-center font-display-lg text-xl shadow-lg border-4 border-surface group-hover:scale-110 transition-transform z-10">08</div>
+                        <h3 class="font-display-lg text-4xl text-on-primary mb-2 mt-4 relative z-10">2008</h3>
+                        <div class="font-label-caps text-xs text-machined-silver uppercase tracking-widest mb-6 relative z-10">The AlTiN Breakthrough</div>
+                        <p class="font-body-md text-on-primary-container relative z-10">Kawa establishes its first in-house PVD coating facility, developing proprietary Aluminum Titanium Nitride nano-coatings that revolutionized tool life for our aerospace clients machining Inconel.</p>
+                    </div>
+                </div>
+
+                <!-- 2018 -->
+                <div class="w-[85vw] md:w-[45vw] lg:w-[30vw] snap-center shrink-0 reveal" style="transition-delay: 300ms;">
+                    <div class="bg-surface border-l-4 border-tertiary-fixed shadow-xl hover:shadow-2xl transition-all duration-500 h-full p-8 md:p-12 relative group">
+                        <div class="absolute -left-6 top-8 w-12 h-12 bg-primary text-tertiary-fixed rounded-full flex items-center justify-center font-display-lg text-xl shadow-lg border-4 border-surface group-hover:scale-110 transition-transform z-10">18</div>
+                        <h3 class="font-display-lg text-4xl text-primary mb-2 mt-4">2018</h3>
+                        <div class="font-label-caps text-xs text-secondary uppercase tracking-widest mb-6">Global Scale</div>
+                        <p class="font-body-md text-on-surface-variant">Expansion reaches critical mass with the opening of our 4th global manufacturing hub, granting us a completely localized supply chain for our North American and European OEM automotive partners.</p>
+                    </div>
+                </div>
+
+                <!-- Today -->
+                <div class="w-[85vw] md:w-[45vw] lg:w-[30vw] snap-center shrink-0 reveal" style="transition-delay: 400ms;">
+                    <div class="bg-surface border-l-4 border-tertiary-fixed shadow-xl hover:shadow-2xl transition-all duration-500 h-full p-8 md:p-12 relative group">
+                        <div class="absolute -left-6 top-8 w-12 h-12 bg-primary text-tertiary-fixed rounded-full flex items-center justify-center font-display-lg text-xl shadow-lg border-4 border-surface group-hover:scale-110 transition-transform z-10">Now</div>
+                        <h3 class="font-display-lg text-4xl text-primary mb-2 mt-4">Today</h3>
+                        <div class="font-label-caps text-xs text-secondary uppercase tracking-widest mb-6">Autonomous Precision</div>
+                        <p class="font-body-md text-on-surface-variant">Integrating robotics and AI into our inspection workflows. Every tool leaving our facility is laser-scanned, digitally verified, and tied to a unique lifecycle data profile.</p>
+                    </div>
+                </div>
+
+                <!-- Spacer to allow scrolling past the last item comfortably -->
+                <div class="w-12 md:w-32 shrink-0"></div>
+            </div>
+            
+            <!-- Scroll Instruction -->
+            <div class="flex items-center gap-3 text-secondary mt-4 animate-pulse">
+                <span class="material-symbols-outlined">swipe</span>
+                <span class="font-label-caps text-xs uppercase tracking-widest">Swipe or Drag to explore</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Engineering Philosophy -->
+    <section class="relative py-24 bg-primary text-on-primary">
+        <div class="max-w-container-max mx-auto px-margin-desktop">
+            <div class="text-center mb-20 reveal">
+                <span class="font-label-caps text-label-caps text-tertiary-fixed uppercase tracking-[0.3em]">Our DNA</span>
+                <h2 class="font-display-lg text-headline-md mt-4">The Kawa Philosophy</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Pillar 1 -->
+                <div class="reveal" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 rounded bg-primary-container text-tertiary-fixed flex items-center justify-center mb-6 shadow-lg border border-machined-silver/10">
+                        <span class="material-symbols-outlined text-3xl">straighten</span>
+                    </div>
+                    <h3 class="font-display-lg text-2xl mb-4">Absolute Tolerance</h3>
+                    <p class="font-body-md text-on-primary-container leading-relaxed">We don't believe in "close enough." Our micro-precision guarantees ensure that every tool meets sub-micron tolerances, eliminating variance on your spindle.</p>
+                </div>
+                <!-- Pillar 2 -->
+                <div class="reveal" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 rounded bg-primary-container text-tertiary-fixed flex items-center justify-center mb-6 shadow-lg border border-machined-silver/10">
+                        <span class="material-symbols-outlined text-3xl">science</span>
+                    </div>
+                    <h3 class="font-display-lg text-2xl mb-4">Material Science</h3>
+                    <p class="font-body-md text-on-primary-container leading-relaxed">Geometry is only half the battle. Our advanced metallurgy and proprietary PVD/CVD coating processes push thermal and abrasive boundaries.</p>
+                </div>
+                <!-- Pillar 3 -->
+                <div class="reveal" style="transition-delay: 300ms;">
+                    <div class="w-16 h-16 rounded bg-primary-container text-tertiary-fixed flex items-center justify-center mb-6 shadow-lg border border-machined-silver/10">
+                        <span class="material-symbols-outlined text-3xl">verified_user</span>
+                    </div>
+                    <h3 class="font-display-lg text-2xl mb-4">Relentless Validation</h3>
+                    <p class="font-body-md text-on-primary-container leading-relaxed">ISO 9001:2015 & AS9100D certified. If it hasn't been rigorously stress-tested in our simulated environments, it doesn't ship. Period.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Facilities Map -->
+    <section class="relative py-24 md:py-32 bg-surface overflow-hidden">
+        <div class="max-w-container-max mx-auto px-margin-desktop relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.3em]">Infrastructure</span>
+                    <h2 class="font-display-lg text-headline-md text-primary mt-4 mb-6">4 Global Hubs. <br>1 Unified Standard.</h2>
+                    <p class="font-body-md text-on-surface-variant mb-8">With strategically located manufacturing and distribution centers in North America, Europe, and Asia, we guarantee localized support and rapid deployment for multinational supply chains.</p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="border-l-2 border-machined-silver pl-4">
+                            <div class="font-label-caps text-xs text-primary uppercase font-bold mb-1">Tokyo, Japan</div>
+                            <div class="font-body-sm text-secondary">R&D / Headquarters</div>
+                        </div>
+                        <div class="border-l-2 border-machined-silver pl-4">
+                            <div class="font-label-caps text-xs text-primary uppercase font-bold mb-1">Stuttgart, Germany</div>
+                            <div class="font-body-sm text-secondary">Automotive Tooling</div>
+                        </div>
+                        <div class="border-l-2 border-machined-silver pl-4">
+                            <div class="font-label-caps text-xs text-primary uppercase font-bold mb-1">Chicago, USA</div>
+                            <div class="font-body-sm text-secondary">Aerospace / Distribution</div>
+                        </div>
+                        <div class="border-l-2 border-machined-silver pl-4">
+                            <div class="font-label-caps text-xs text-primary uppercase font-bold mb-1">Bangalore, India</div>
+                            <div class="font-body-sm text-secondary">Software & Analytics</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative h-[400px] md:h-[500px] bg-primary rounded-xl overflow-hidden shadow-2xl reveal flex items-center justify-center p-8">
+                    <!-- Abstract Map Visualization -->
+                    <div class="absolute inset-0 blueprint-grid opacity-20"></div>
+                    <div class="relative w-full h-full border border-machined-silver/10 rounded-lg bg-primary-container/50 backdrop-blur flex items-center justify-center p-4">
+                        <span class="material-symbols-outlined text-[200px] text-tertiary-fixed/20 animate-pulse">language</span>
+                        <!-- Pins -->
+                        <div class="absolute w-3 h-3 bg-tertiary-fixed rounded-full shadow-[0_0_15px_rgba(234,179,8,1)] top-1/3 left-1/4 animate-ping"></div>
+                        <div class="absolute w-3 h-3 bg-tertiary-fixed rounded-full shadow-[0_0_15px_rgba(234,179,8,1)] top-1/4 right-1/4 animate-ping" style="animation-delay: 200ms;"></div>
+                        <div class="absolute w-3 h-3 bg-tertiary-fixed rounded-full shadow-[0_0_15px_rgba(234,179,8,1)] bottom-1/3 right-1/3 animate-ping" style="animation-delay: 400ms;"></div>
+                        <div class="absolute w-3 h-3 bg-tertiary-fixed rounded-full shadow-[0_0_15px_rgba(234,179,8,1)] bottom-1/4 left-1/3 animate-ping" style="animation-delay: 600ms;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+<footer class="relative bg-primary border-t-4 border-tertiary-fixed pt-24 pb-8 overflow-hidden z-20">
+    <!-- Subtle Background Elements -->
+    <div class="absolute inset-0 blueprint-grid opacity-20 pointer-events-none"></div>
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-tertiary-fixed/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-container-max mx-auto px-margin-desktop relative z-10">
+        <!-- Top Row: Newsletter & Global Reach -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 pb-16 border-b border-primary-container/50">
+            <!-- Newsletter -->
+            <div>
+                <span class="font-label-caps text-label-caps text-tertiary-fixed uppercase tracking-widest mb-2 block">Technical Insider</span>
+                <h3 class="font-headline-md text-on-primary mb-4">Engineering Breakthroughs, Delivered.</h3>
+                <p class="font-body-sm text-on-primary-container mb-6 max-w-md">Join 15,000+ industry professionals receiving our quarterly whitepapers on advanced machining, metallurgy, and automation.</p>
+                <form class="flex gap-2 max-w-md" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Engineering Email Address" class="flex-1 bg-primary-container/50 border border-machined-silver/20 px-4 py-3 text-on-primary font-body-sm focus:outline-none focus:border-tertiary-fixed transition-colors" required>
+                    <button type="submit" class="bg-tertiary-fixed text-primary px-6 py-3 font-button text-button uppercase tracking-wider hover:bg-tertiary-fixed/90 transition-colors">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+
+            <!-- Global Hubs -->
+            <div class="lg:border-l lg:border-primary-container/50 lg:pl-16">
+                <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-6 block">Global Manufacturing Hubs</span>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 bg-tertiary-fixed rounded-full animate-pulse"></span>
+                            <h4 class="text-on-primary font-bold text-sm">Pune, India (HQ)</h4>
+                        </div>
+                        <p class="text-on-primary-container text-xs font-body-sm leading-relaxed">Phase II, Chakan Industrial Area<br>Maharashtra 410501</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 bg-machined-silver/30 rounded-full"></span>
+                            <h4 class="text-on-primary font-bold text-sm">Munich, Germany</h4>
+                        </div>
+                        <p class="text-on-primary-container text-xs font-body-sm leading-relaxed">Technologiepark 4<br>85748 Garching</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 bg-machined-silver/30 rounded-full"></span>
+                            <h4 class="text-on-primary font-bold text-sm">Detroit, USA</h4>
+                        </div>
+                        <p class="text-on-primary-container text-xs font-body-sm leading-relaxed">Advanced Tech Center<br>Troy, MI 48083</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 bg-machined-silver/30 rounded-full"></span>
+                            <h4 class="text-on-primary font-bold text-sm">Nagoya, Japan</h4>
+                        </div>
+                        <p class="text-on-primary-container text-xs font-body-sm leading-relaxed">Aichi Precision Valley<br>Toyota City 471-8571</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Row: Navigation Links -->
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 py-16 border-b border-primary-container/50">
+            <div class="col-span-2 lg:col-span-1">
+                <div class="font-display-lg text-headline-sm text-tertiary-fixed mb-4">Kawa Systems</div>
+                <p class="font-body-sm text-on-primary-container text-xs mb-6">Engineered for absolute precision. Built for the future of global manufacturing.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container hover:bg-tertiary-fixed hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-sm">share</span>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container hover:bg-tertiary-fixed hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-sm">mail</span>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h5 class="text-on-primary font-bold mb-6 text-xs uppercase tracking-widest">Solutions</h5>
+                <ul class="space-y-3">
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#solutions-industries">Automotive & EV</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#solutions-industries">Aerospace</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#solutions-industries">Medical</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#solutions-industries">Energy</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-on-primary font-bold mb-6 text-xs uppercase tracking-widest">Capabilities</h5>
+                <ul class="space-y-3">
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">5-Axis Machining</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Wire EDM</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Surface Grinding</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">CMM Inspection</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Rapid Prototyping</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-on-primary font-bold mb-6 text-xs uppercase tracking-widest">Company</h5>
+                <ul class="space-y-3">
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">About Us</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Leadership</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Careers</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Sustainability</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Investor Relations</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-on-primary font-bold mb-6 text-xs uppercase tracking-widest">Compliance</h5>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 bg-primary-container/30 border border-machined-silver/10 p-2">
+                        <span class="material-symbols-outlined text-tertiary-fixed text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        <div>
+                            <div class="text-on-primary text-[10px] font-bold uppercase tracking-wider">ISO 9001:2015</div>
+                            <div class="text-on-primary-container text-[9px] uppercase tracking-widest">Certified</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-primary-container/30 border border-machined-silver/10 p-2">
+                        <span class="material-symbols-outlined text-tertiary-fixed text-xl" style="font-variation-settings: 'FILL' 1;">flight</span>
+                        <div>
+                            <div class="text-on-primary text-[10px] font-bold uppercase tracking-wider">AS9100D</div>
+                            <div class="text-on-primary-container text-[9px] uppercase tracking-widest">Certified</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Row: Copyright & Legal -->
+        <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="font-body-sm text-on-primary-container text-xs">&copy; 2024 Kawa Tooling Systems Ltd. All rights reserved.</p>
+
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#" class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors">Privacy Policy</a>
+                <a href="#" class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors">Terms of Service</a>
+                <a href="#" class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors">Cookie Preferences</a>
+                <a href="#" class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors">Supply Chain Act</a>
+            </div>
+
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center gap-2 font-label-caps text-[10px] uppercase tracking-widest text-on-primary hover:text-tertiary-fixed transition-colors group">
+                Back to top
+                <span class="w-8 h-8 rounded-full border border-machined-silver/30 flex items-center justify-center group-hover:border-tertiary-fixed transition-colors">
+                    <span class="material-symbols-outlined text-sm">arrow_upward</span>
+                </span>
+            </button>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

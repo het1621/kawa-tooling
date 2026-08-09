@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kawa Tooling Systems | Engineering Excellence</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+
+
+<link rel="stylesheet" href="/style.css">
+<style>
+    /* Reveal Typography Animation */
+    .line-reveal { opacity: 0.2; transition: opacity 0.5s ease; }
+    .line-reveal.active { opacity: 1; }
+</style>
+<script type="module" src="/main.js"></script>
+</head>
+<body class="bg-primary font-body-md text-on-surface overflow-x-hidden">
+
+<!-- TopNavBar with Utility -->
+<header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-500 shadow-none">
+    <!-- Main Header -->
+    <div id="nav-container" class="bg-primary/40 backdrop-blur-xl border-b border-machined-silver/10 h-24 flex items-center transition-all duration-500 hover:bg-primary/70">
+        <div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center w-full">
+            <a href="/index.html" class="font-display-lg text-headline-sm font-bold text-tertiary-fixed flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <!-- Abstract Geometric Logo -->
+                <div class="w-8 h-8 relative flex items-center justify-center">
+                    <div class="absolute inset-0 border-[3px] border-tertiary-fixed rotate-45"></div>
+                    <div class="absolute w-4 h-4 bg-on-primary"></div>
+                </div>
+                Kawa Tooling Systems
+            </a>
+            <nav class="hidden md:flex gap-gutter items-center relative h-full" id="main-nav">
+                <!-- Glowing Indicator -->
+                <div id="nav-indicator" class="absolute bottom-0 h-0.5 bg-tertiary-fixed transition-all duration-300 ease-out shadow-[0_0_8px_rgba(234,179,8,0.6)] pointer-events-none" style="width: 0px; left: 0px; opacity: 0;"></div>
+                
+                <!-- Products with mega menu hook (UI Polish) -->
+                <div class="relative group h-full flex items-center nav-item">
+                    <a class="font-button text-button uppercase tracking-wider text-tertiary-fixed transition-colors flex items-center gap-1 border-b-2 border-tertiary-fixed" href="/products.html">
+                        Products
+                    </a>
+                </div>
+                <a class="nav-item font-button text-button uppercase tracking-wider text-on-primary hover:text-tertiary-fixed transition-colors h-full flex items-center" href="/solutions.html">Solutions</a>
+                <a class="nav-item font-button text-button uppercase tracking-wider text-on-primary hover:text-tertiary-fixed transition-colors h-full flex items-center" href="/support.html">Engineering Support</a><a class="nav-item font-button text-button uppercase tracking-wider text-on-primary hover:text-tertiary-fixed transition-colors h-full flex items-center" href="/about.html">About Us</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="/support.html" class="hidden lg:block bg-tertiary-fixed text-primary px-8 py-3 font-button text-button uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all shadow-lg hover:shadow-tertiary-fixed/20 hover:ring-2 hover:ring-tertiary-fixed/50">
+                    Request Quote
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-on-primary p-2 z-[60] relative">
+                    <span class="material-symbols-outlined text-3xl transition-transform duration-300">menu</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-primary/95 backdrop-blur-2xl z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300">
+    <nav class="flex flex-col gap-8 text-center items-center w-full px-6">
+        <a href="/products.html" class="font-display-lg text-4xl text-on-primary hover:text-tertiary-fixed transition-colors block w-full text-center">Products</a>
+        <a href="/solutions.html" class="font-display-lg text-4xl text-on-primary hover:text-tertiary-fixed transition-colors block w-full text-center">Solutions</a>
+        <a class="nav-item font-button text-button uppercase tracking-wider text-on-primary hover:text-tertiary-fixed transition-colors h-full flex items-center" href="/support.html">Engineering Support</a><a href="/about.html" class="font-display-lg text-4xl text-on-primary hover:text-tertiary-fixed transition-colors block w-full text-center">About Us</a>
+        <div class="h-px w-16 bg-machined-silver/30 my-4"></div>
+        <a href="/support.html" class="inline-block bg-tertiary-fixed text-primary px-10 py-4 font-button text-button uppercase tracking-wider hover:opacity-90 active:scale-95 transition-all w-full max-w-xs text-center shadow-lg hover:shadow-tertiary-fixed/20 hover:ring-2 hover:ring-tertiary-fixed/50">
+            Request Quote
+        </a>
+    </nav>
+</div>
+<!-- SideNavBar -->
+<aside class="hidden md:flex fixed right-6 bottom-32 rounded-full w-14 flex-col gap-unit items-center z-40 bg-surface shadow-lg border border-machined-silver p-2">
+<div class="text-[10px] font-label-caps uppercase text-primary mb-2 rotate-90 origin-center whitespace-nowrap">Engineering Support</div>
+<button class="bg-tertiary-fixed text-on-tertiary-fixed rounded-full p-3 hover:scale-110 shadow-md transition-all active:scale-90" title="WhatsApp">
+<span class="material-symbols-outlined">chat</span>
+</button>
+<button class="bg-surface text-primary p-3 rounded-full hover:bg-secondary-container transition-all hover:scale-110" title="Call">
+<span class="material-symbols-outlined">call</span>
+</button>
+<button class="bg-surface text-primary p-3 rounded-full hover:bg-secondary-container transition-all hover:scale-110" title="Email">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</aside>
+<main class="pt-32 pb-32">
+    <!-- Hero Section -->
+    <section class="max-w-container-max mx-auto px-margin-desktop mb-24 reveal">
+        <h1 class="font-display-lg text-display-lg text-tertiary-fixed mb-4">Precision Tooling Systems</h1>
+        <p class="font-body-lg text-on-primary-container max-w-2xl line-reveal">Engineered for absolute dimensional stability. Explore our high-performance inventory designed to reduce cycle times and maximize material removal rates.</p>
+    </section>
+
+    <!-- Product Grid -->
+<section class="max-w-container-max mx-auto px-margin-desktop" id="products-catalog">
+
+        <!-- Product 1 -->
+        <div class="product-split-card reveal flex flex-col relative w-full bg-transparent group overflow-hidden mb-8 rounded-sm transition-shadow duration-500">
+            
+            <!-- Desktop/Header Block -->
+            <div class="product-header relative w-full h-64 min-h-[16rem] md:h-80 md:min-h-[20rem] shrink-0 flex items-center justify-center cursor-pointer md:cursor-default">
+                
+                <!-- Image/Icon (Centered Square on Desktop) -->
+                <div class="product-image absolute inset-y-0 w-full md:w-1/2 left-0 md:left-1/4 bg-primary-container flex items-center justify-center border-b md:border-b-0 md:border-r border-machined-silver/10 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-20 group-hover:md:left-0 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                    <div class="absolute inset-0 blueprint-grid opacity-30"></div>
+                    <span class="material-symbols-outlined text-8xl text-on-primary-container group-hover:text-tertiary-fixed transition-colors duration-500 relative z-10" style="font-variation-settings: 'FILL' 1;">manufacturing</span>
+                </div>
+
+                <!-- Desktop Details (Hidden behind image initially) -->
+                <div class="product-details hidden md:flex absolute inset-y-0 w-1/2 right-1/4 opacity-0 -translate-x-16 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-10 group-hover:md:right-0 group-hover:md:opacity-100 group-hover:md:translate-x-0 items-center bg-transparent">
+                    <div class="p-12 xl:p-16 w-full">
+                        <div class="font-label-caps text-xs text-tertiary-fixed tracking-widest uppercase mb-2">PT-100</div>
+                        <h3 class="font-headline-sm text-on-primary mb-4 text-3xl">Indexable Roughing</h3>
+                        <p class="font-body-lg text-on-primary-container mb-8">High-feed cutters for aggressive titanium & Inconel forging removal.</p>
+                        
+                        <div class="border-t border-machined-silver/10 pt-6 flex gap-12 items-center">
+                            <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Max RPM</div><div class="text-sm text-on-primary-container">12,000</div></div>
+                            <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Coolant</div><div class="text-sm text-on-primary-container">Through</div></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Mobile Details Accordion -->
+            <div class="product-mobile-details md:hidden bg-transparent overflow-hidden h-0 transition-[height] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] border-t border-machined-silver/0">
+                <div class="p-8 opacity-0 transition-opacity duration-500 delay-100 inner-content">
+                    <div class="font-label-caps text-[10px] text-tertiary-fixed tracking-widest uppercase mb-2">PT-100</div>
+                    <h3 class="font-headline-sm text-on-primary mb-4 text-2xl">Indexable Roughing</h3>
+                    <p class="font-body-sm text-on-primary-container mb-6">High-feed cutters for aggressive titanium & Inconel forging removal.</p>
+                    
+                    <div class="border-t border-machined-silver/10 pt-6 flex justify-between items-center">
+                        <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Max RPM</div><div class="text-sm text-on-primary-container">12,000</div></div>
+                        <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Coolant</div><div class="text-sm text-on-primary-container">Through</div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+        <!-- Product 2 -->
+        <div class="product-split-card reveal flex flex-col relative w-full bg-transparent group overflow-hidden mb-8 rounded-sm transition-shadow duration-500">
+            
+            <!-- Desktop/Header Block -->
+            <div class="product-header relative w-full h-64 min-h-[16rem] md:h-80 md:min-h-[20rem] shrink-0 flex items-center justify-center cursor-pointer md:cursor-default">
+                
+                <!-- Image/Icon (Centered Square on Desktop) -->
+                <div class="product-image absolute inset-y-0 w-full md:w-1/2 left-0 md:left-1/4 bg-primary-container flex items-center justify-center border-b md:border-b-0 md:border-r border-machined-silver/10 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-20 group-hover:md:left-0 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                    <div class="absolute inset-0 blueprint-grid opacity-30"></div>
+                    <span class="material-symbols-outlined text-8xl text-on-primary-container group-hover:text-tertiary-fixed transition-colors duration-500 relative z-10" style="font-variation-settings: 'FILL' 1;">architecture</span>
+                </div>
+
+                <!-- Desktop Details (Hidden behind image initially) -->
+                <div class="product-details hidden md:flex absolute inset-y-0 w-1/2 right-1/4 opacity-0 -translate-x-16 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-10 group-hover:md:right-0 group-hover:md:opacity-100 group-hover:md:translate-x-0 items-center bg-transparent">
+                    <div class="p-12 xl:p-16 w-full">
+                        <div class="font-label-caps text-xs text-tertiary-fixed tracking-widest uppercase mb-2">SC-500</div>
+                        <h3 class="font-headline-sm text-on-primary mb-4 text-3xl">Solid Carbide Mills</h3>
+                        <p class="font-body-lg text-on-primary-container mb-8">Sub-micron grain carbide end mills with proprietary AlTiN coating.</p>
+                        
+                        <div class="border-t border-machined-silver/10 pt-6 flex gap-12 items-center">
+                            <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Flutes</div><div class="text-sm text-on-primary-container">4-7 Var</div></div>
+                            <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Tolerance</div><div class="text-sm text-on-primary-container">h6</div></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Mobile Details Accordion -->
+            <div class="product-mobile-details md:hidden bg-transparent overflow-hidden h-0 transition-[height] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] border-t border-machined-silver/0">
+                <div class="p-8 opacity-0 transition-opacity duration-500 delay-100 inner-content">
+                    <div class="font-label-caps text-[10px] text-tertiary-fixed tracking-widest uppercase mb-2">SC-500</div>
+                    <h3 class="font-headline-sm text-on-primary mb-4 text-2xl">Solid Carbide Mills</h3>
+                    <p class="font-body-sm text-on-primary-container mb-6">Sub-micron grain carbide end mills with proprietary AlTiN coating.</p>
+                    
+                    <div class="border-t border-machined-silver/10 pt-6 flex justify-between items-center">
+                        <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Flutes</div><div class="text-sm text-on-primary-container">4-7 Var</div></div>
+                        <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Tolerance</div><div class="text-sm text-on-primary-container">h6</div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+        <!-- Product 3 -->
+        <div class="product-split-card reveal flex flex-col relative w-full bg-transparent group overflow-hidden mb-8 rounded-sm transition-shadow duration-500">
+            
+            <!-- Desktop/Header Block -->
+            <div class="product-header relative w-full h-64 min-h-[16rem] md:h-80 md:min-h-[20rem] shrink-0 flex items-center justify-center cursor-pointer md:cursor-default">
+                
+                <!-- Image/Icon (Centered Square on Desktop) -->
+                <div class="product-image absolute inset-y-0 w-full md:w-1/2 left-0 md:left-1/4 bg-primary-container flex items-center justify-center border-b md:border-b-0 md:border-r border-machined-silver/10 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-20 group-hover:md:left-0 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                    <div class="absolute inset-0 blueprint-grid opacity-30"></div>
+                    <span class="material-symbols-outlined text-8xl text-on-primary-container group-hover:text-tertiary-fixed transition-colors duration-500 relative z-10" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+                </div>
+
+                <!-- Desktop Details (Hidden behind image initially) -->
+                <div class="product-details hidden md:flex absolute inset-y-0 w-1/2 right-1/4 opacity-0 -translate-x-16 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-10 group-hover:md:right-0 group-hover:md:opacity-100 group-hover:md:translate-x-0 items-center bg-transparent">
+                    <div class="p-12 xl:p-16 w-full">
+                        <div class="font-label-caps text-xs text-tertiary-fixed tracking-widest uppercase mb-2">TB-250</div>
+                        <h3 class="font-headline-sm text-on-primary mb-4 text-3xl">Precision Boring</h3>
+                        <p class="font-body-lg text-on-primary-container mb-8">Rigid boring bars with vibration-damping cores for deep cavities.</p>
+                        
+                        <div class="border-t border-machined-silver/10 pt-6 flex gap-12 items-center">
+                            <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Mount</div><div class="text-sm text-on-primary-container">Capto</div></div>
+                            <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Vibration</div><div class="text-sm text-on-primary-container">Damped</div></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Mobile Details Accordion -->
+            <div class="product-mobile-details md:hidden bg-transparent overflow-hidden h-0 transition-[height] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] border-t border-machined-silver/0">
+                <div class="p-8 opacity-0 transition-opacity duration-500 delay-100 inner-content">
+                    <div class="font-label-caps text-[10px] text-tertiary-fixed tracking-widest uppercase mb-2">TB-250</div>
+                    <h3 class="font-headline-sm text-on-primary mb-4 text-2xl">Precision Boring</h3>
+                    <p class="font-body-sm text-on-primary-container mb-6">Rigid boring bars with vibration-damping cores for deep cavities.</p>
+                    
+                    <div class="border-t border-machined-silver/10 pt-6 flex justify-between items-center">
+                        <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Mount</div><div class="text-sm text-on-primary-container">Capto</div></div>
+                        <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Vibration</div><div class="text-sm text-on-primary-container">Damped</div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+        <!-- Product 4 -->
+        <div class="product-split-card reveal flex flex-col relative w-full bg-transparent group overflow-hidden mb-8 rounded-sm transition-shadow duration-500">
+            
+            <!-- Desktop/Header Block -->
+            <div class="product-header relative w-full h-64 min-h-[16rem] md:h-80 md:min-h-[20rem] shrink-0 flex items-center justify-center cursor-pointer md:cursor-default">
+                
+                <!-- Image/Icon (Centered Square on Desktop) -->
+                <div class="product-image absolute inset-y-0 w-full md:w-1/2 left-0 md:left-1/4 bg-primary-container flex items-center justify-center border-b md:border-b-0 md:border-r border-machined-silver/10 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-20 group-hover:md:left-0 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                    <div class="absolute inset-0 blueprint-grid opacity-30"></div>
+                    <span class="material-symbols-outlined text-8xl text-on-primary-container group-hover:text-tertiary-fixed transition-colors duration-500 relative z-10" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+                </div>
+
+                <!-- Desktop Details (Hidden behind image initially) -->
+                <div class="product-details hidden md:flex absolute inset-y-0 w-1/2 right-1/4 opacity-0 -translate-x-16 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-10 group-hover:md:right-0 group-hover:md:opacity-100 group-hover:md:translate-x-0 items-center bg-transparent">
+                    <div class="p-12 xl:p-16 w-full">
+                        <div class="font-label-caps text-xs text-tertiary-fixed tracking-widest uppercase mb-2">MD-050</div>
+                        <h3 class="font-headline-sm text-on-primary mb-4 text-3xl">Micro-Drills</h3>
+                        <p class="font-body-lg text-on-primary-container mb-8">Diamond-coated micro drills for medical implants and circuit boards.</p>
+                        
+                        <div class="border-t border-machined-silver/10 pt-6 flex gap-12 items-center">
+                            <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Coating</div><div class="text-sm text-on-primary-container">CVD Diamond</div></div>
+                            <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Dia.</div><div class="text-sm text-on-primary-container">0.1mm+</div></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Mobile Details Accordion -->
+            <div class="product-mobile-details md:hidden bg-transparent overflow-hidden h-0 transition-[height] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] border-t border-machined-silver/0">
+                <div class="p-8 opacity-0 transition-opacity duration-500 delay-100 inner-content">
+                    <div class="font-label-caps text-[10px] text-tertiary-fixed tracking-widest uppercase mb-2">MD-050</div>
+                    <h3 class="font-headline-sm text-on-primary mb-4 text-2xl">Micro-Drills</h3>
+                    <p class="font-body-sm text-on-primary-container mb-6">Diamond-coated micro drills for medical implants and circuit boards.</p>
+                    
+                    <div class="border-t border-machined-silver/10 pt-6 flex justify-between items-center">
+                        <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Coating</div><div class="text-sm text-on-primary-container">CVD Diamond</div></div>
+                        <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Dia.</div><div class="text-sm text-on-primary-container">0.1mm+</div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+        <!-- Product 5 -->
+        <div class="product-split-card reveal flex flex-col relative w-full bg-transparent group overflow-hidden mb-8 rounded-sm transition-shadow duration-500">
+            
+            <!-- Desktop/Header Block -->
+            <div class="product-header relative w-full h-64 min-h-[16rem] md:h-80 md:min-h-[20rem] shrink-0 flex items-center justify-center cursor-pointer md:cursor-default">
+                
+                <!-- Image/Icon (Centered Square on Desktop) -->
+                <div class="product-image absolute inset-y-0 w-full md:w-1/2 left-0 md:left-1/4 bg-primary-container flex items-center justify-center border-b md:border-b-0 md:border-r border-machined-silver/10 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-20 group-hover:md:left-0 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                    <div class="absolute inset-0 blueprint-grid opacity-30"></div>
+                    <span class="material-symbols-outlined text-8xl text-on-primary-container group-hover:text-tertiary-fixed transition-colors duration-500 relative z-10" style="font-variation-settings: 'FILL' 1;">flight</span>
+                </div>
+
+                <!-- Desktop Details (Hidden behind image initially) -->
+                <div class="product-details hidden md:flex absolute inset-y-0 w-1/2 right-1/4 opacity-0 -translate-x-16 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-10 group-hover:md:right-0 group-hover:md:opacity-100 group-hover:md:translate-x-0 items-center bg-transparent">
+                    <div class="p-12 xl:p-16 w-full">
+                        <div class="font-label-caps text-xs text-tertiary-fixed tracking-widest uppercase mb-2">Aero-7</div>
+                        <h3 class="font-headline-sm text-on-primary mb-4 text-3xl">Turbine Formers</h3>
+                        <p class="font-body-lg text-on-primary-container mb-8">Custom multi-axis forms designed for aerospace blisk manufacturing.</p>
+                        
+                        <div class="border-t border-machined-silver/10 pt-6 flex gap-12 items-center">
+                            <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Geometry</div><div class="text-sm text-on-primary-container">5-Axis</div></div>
+                            <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Material</div><div class="text-sm text-on-primary-container">Inconel</div></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Mobile Details Accordion -->
+            <div class="product-mobile-details md:hidden bg-transparent overflow-hidden h-0 transition-[height] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] border-t border-machined-silver/0">
+                <div class="p-8 opacity-0 transition-opacity duration-500 delay-100 inner-content">
+                    <div class="font-label-caps text-[10px] text-tertiary-fixed tracking-widest uppercase mb-2">Aero-7</div>
+                    <h3 class="font-headline-sm text-on-primary mb-4 text-2xl">Turbine Formers</h3>
+                    <p class="font-body-sm text-on-primary-container mb-6">Custom multi-axis forms designed for aerospace blisk manufacturing.</p>
+                    
+                    <div class="border-t border-machined-silver/10 pt-6 flex justify-between items-center">
+                        <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Geometry</div><div class="text-sm text-on-primary-container">5-Axis</div></div>
+                        <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Material</div><div class="text-sm text-on-primary-container">Inconel</div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+        <!-- Product 6 -->
+        <div class="product-split-card reveal flex flex-col relative w-full bg-transparent group overflow-hidden mb-8 rounded-sm transition-shadow duration-500">
+            
+            <!-- Desktop/Header Block -->
+            <div class="product-header relative w-full h-64 min-h-[16rem] md:h-80 md:min-h-[20rem] shrink-0 flex items-center justify-center cursor-pointer md:cursor-default">
+                
+                <!-- Image/Icon (Centered Square on Desktop) -->
+                <div class="product-image absolute inset-y-0 w-full md:w-1/2 left-0 md:left-1/4 bg-primary-container flex items-center justify-center border-b md:border-b-0 md:border-r border-machined-silver/10 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-20 group-hover:md:left-0 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                    <div class="absolute inset-0 blueprint-grid opacity-30"></div>
+                    <span class="material-symbols-outlined text-8xl text-on-primary-container group-hover:text-tertiary-fixed transition-colors duration-500 relative z-10" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+                </div>
+
+                <!-- Desktop Details (Hidden behind image initially) -->
+                <div class="product-details hidden md:flex absolute inset-y-0 w-1/2 right-1/4 opacity-0 -translate-x-16 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-10 group-hover:md:right-0 group-hover:md:opacity-100 group-hover:md:translate-x-0 items-center bg-transparent">
+                    <div class="p-12 xl:p-16 w-full">
+                        <div class="font-label-caps text-xs text-tertiary-fixed tracking-widest uppercase mb-2">Auto-X</div>
+                        <h3 class="font-headline-sm text-on-primary mb-4 text-3xl">Engine Block Dies</h3>
+                        <p class="font-body-lg text-on-primary-container mb-8">Massive format casting dies engineered for high-volume automotive production.</p>
+                        
+                        <div class="border-t border-machined-silver/10 pt-6 flex gap-12 items-center">
+                            <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Life</div><div class="text-sm text-on-primary-container">1M Cycles</div></div>
+                            <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Cooling</div><div class="text-sm text-on-primary-container">Conformal</div></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Mobile Details Accordion -->
+            <div class="product-mobile-details md:hidden bg-transparent overflow-hidden h-0 transition-[height] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] border-t border-machined-silver/0">
+                <div class="p-8 opacity-0 transition-opacity duration-500 delay-100 inner-content">
+                    <div class="font-label-caps text-[10px] text-tertiary-fixed tracking-widest uppercase mb-2">Auto-X</div>
+                    <h3 class="font-headline-sm text-on-primary mb-4 text-2xl">Engine Block Dies</h3>
+                    <p class="font-body-sm text-on-primary-container mb-6">Massive format casting dies engineered for high-volume automotive production.</p>
+                    
+                    <div class="border-t border-machined-silver/10 pt-6 flex justify-between items-center">
+                        <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Life</div><div class="text-sm text-on-primary-container">1M Cycles</div></div>
+                        <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Cooling</div><div class="text-sm text-on-primary-container">Conformal</div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+        <!-- Product 7 -->
+        <div class="product-split-card reveal flex flex-col relative w-full bg-transparent group overflow-hidden mb-8 rounded-sm transition-shadow duration-500">
+            
+            <!-- Desktop/Header Block -->
+            <div class="product-header relative w-full h-64 min-h-[16rem] md:h-80 md:min-h-[20rem] shrink-0 flex items-center justify-center cursor-pointer md:cursor-default">
+                
+                <!-- Image/Icon (Centered Square on Desktop) -->
+                <div class="product-image absolute inset-y-0 w-full md:w-1/2 left-0 md:left-1/4 bg-primary-container flex items-center justify-center border-b md:border-b-0 md:border-r border-machined-silver/10 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-20 group-hover:md:left-0 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                    <div class="absolute inset-0 blueprint-grid opacity-30"></div>
+                    <span class="material-symbols-outlined text-8xl text-on-primary-container group-hover:text-tertiary-fixed transition-colors duration-500 relative z-10" style="font-variation-settings: 'FILL' 1;">straighten</span>
+                </div>
+
+                <!-- Desktop Details (Hidden behind image initially) -->
+                <div class="product-details hidden md:flex absolute inset-y-0 w-1/2 right-1/4 opacity-0 -translate-x-16 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-10 group-hover:md:right-0 group-hover:md:opacity-100 group-hover:md:translate-x-0 items-center bg-transparent">
+                    <div class="p-12 xl:p-16 w-full">
+                        <div class="font-label-caps text-xs text-tertiary-fixed tracking-widest uppercase mb-2">GR-20</div>
+                        <h3 class="font-headline-sm text-on-primary mb-4 text-3xl">Precision Grooving</h3>
+                        <p class="font-body-lg text-on-primary-container mb-8">Heavy-duty grooving and parting-off tools with extreme rigidity.</p>
+                        
+                        <div class="border-t border-machined-silver/10 pt-6 flex gap-12 items-center">
+                            <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Insert</div><div class="text-sm text-on-primary-container">Carbide</div></div>
+                            <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Width</div><div class="text-sm text-on-primary-container">2mm-10mm</div></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Mobile Details Accordion -->
+            <div class="product-mobile-details md:hidden bg-transparent overflow-hidden h-0 transition-[height] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] border-t border-machined-silver/0">
+                <div class="p-8 opacity-0 transition-opacity duration-500 delay-100 inner-content">
+                    <div class="font-label-caps text-[10px] text-tertiary-fixed tracking-widest uppercase mb-2">GR-20</div>
+                    <h3 class="font-headline-sm text-on-primary mb-4 text-2xl">Precision Grooving</h3>
+                    <p class="font-body-sm text-on-primary-container mb-6">Heavy-duty grooving and parting-off tools with extreme rigidity.</p>
+                    
+                    <div class="border-t border-machined-silver/10 pt-6 flex justify-between items-center">
+                        <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Insert</div><div class="text-sm text-on-primary-container">Carbide</div></div>
+                        <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Width</div><div class="text-sm text-on-primary-container">2mm-10mm</div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+        <!-- Product 8 -->
+        <div class="product-split-card reveal flex flex-col relative w-full bg-transparent group overflow-hidden mb-8 rounded-sm transition-shadow duration-500">
+            
+            <!-- Desktop/Header Block -->
+            <div class="product-header relative w-full h-64 min-h-[16rem] md:h-80 md:min-h-[20rem] shrink-0 flex items-center justify-center cursor-pointer md:cursor-default">
+                
+                <!-- Image/Icon (Centered Square on Desktop) -->
+                <div class="product-image absolute inset-y-0 w-full md:w-1/2 left-0 md:left-1/4 bg-primary-container flex items-center justify-center border-b md:border-b-0 md:border-r border-machined-silver/10 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-20 group-hover:md:left-0 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                    <div class="absolute inset-0 blueprint-grid opacity-30"></div>
+                    <span class="material-symbols-outlined text-8xl text-on-primary-container group-hover:text-tertiary-fixed transition-colors duration-500 relative z-10" style="font-variation-settings: 'FILL' 1;">build</span>
+                </div>
+
+                <!-- Desktop Details (Hidden behind image initially) -->
+                <div class="product-details hidden md:flex absolute inset-y-0 w-1/2 right-1/4 opacity-0 -translate-x-16 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] z-10 group-hover:md:right-0 group-hover:md:opacity-100 group-hover:md:translate-x-0 items-center bg-transparent">
+                    <div class="p-12 xl:p-16 w-full">
+                        <div class="font-label-caps text-xs text-tertiary-fixed tracking-widest uppercase mb-2">TH-MAX</div>
+                        <h3 class="font-headline-sm text-on-primary mb-4 text-3xl">Custom Toolholding</h3>
+                        <p class="font-body-lg text-on-primary-container mb-8">Shrink-fit and hydraulic chucks ensuring near-zero runout at high speeds.</p>
+                        
+                        <div class="border-t border-machined-silver/10 pt-6 flex gap-12 items-center">
+                            <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Runout</div><div class="text-sm text-on-primary-container">&lt; 3µm</div></div>
+                            <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Balance</div><div class="text-sm text-on-primary-container">G2.5</div></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Mobile Details Accordion -->
+            <div class="product-mobile-details md:hidden bg-transparent overflow-hidden h-0 transition-[height] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] border-t border-machined-silver/0">
+                <div class="p-8 opacity-0 transition-opacity duration-500 delay-100 inner-content">
+                    <div class="font-label-caps text-[10px] text-tertiary-fixed tracking-widest uppercase mb-2">TH-MAX</div>
+                    <h3 class="font-headline-sm text-on-primary mb-4 text-2xl">Custom Toolholding</h3>
+                    <p class="font-body-sm text-on-primary-container mb-6">Shrink-fit and hydraulic chucks ensuring near-zero runout at high speeds.</p>
+                    
+                    <div class="border-t border-machined-silver/10 pt-6 flex justify-between items-center">
+                        <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Runout</div><div class="text-sm text-on-primary-container">&lt; 3µm</div></div>
+                        <div><div class="text-[10px] uppercase font-bold text-on-primary tracking-wider">Balance</div><div class="text-sm text-on-primary-container">G2.5</div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<!-- Separated Proprietary Technology Deep Dive (Full Width) -->
+<section class="w-full bg-primary-container border-y border-machined-silver/10 overflow-hidden relative reveal py-16 mb-24 mt-8 shadow-2xl">
+    <div class="absolute inset-0 blueprint-grid opacity-20"></div>
+    <div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 relative z-10">
+        <div class="p-12 lg:p-24 flex flex-col justify-center">
+            <span class="font-label-caps text-xs text-tertiary-fixed tracking-widest uppercase mb-4 block line-reveal">Material Science</span>
+            <h2 class="font-display-lg text-4xl lg:text-5xl text-on-primary mb-6 line-reveal">AlTiN Nano-Coatings</h2>
+            <p class="font-body-lg text-on-primary-container mb-8 line-reveal">Our proprietary Aluminum Titanium Nitride (AlTiN) nano-layer coating provides extreme oxidation resistance. Engineered to withstand cutting temperatures exceeding 800°C without compromising edge geometry.</p>
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-4 reveal">
+                    <div class="w-12 h-12 rounded-full bg-surface border border-machined-silver/20 flex items-center justify-center text-tertiary-fixed"><span class="material-symbols-outlined">thermostat</span></div>
+                    <div><div class="text-on-primary font-bold">800°C+ Resistance</div><div class="text-xs text-on-primary-container">Maintains hardness at extreme heat.</div></div>
+                </div>
+                <div class="flex items-center gap-4 reveal">
+                    <div class="w-12 h-12 rounded-full bg-surface border border-machined-silver/20 flex items-center justify-center text-tertiary-fixed"><span class="material-symbols-outlined">science</span></div>
+                    <div><div class="text-on-primary font-bold">3,300 HV Hardness</div><div class="text-xs text-on-primary-container">Unmatched wear resistance.</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-surface relative overflow-hidden flex items-center justify-center p-12 reveal rounded-xl border border-machined-silver/5">
+            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-tertiary-fixed/30 via-surface to-surface"></div>
+            <div class="relative w-full aspect-square border border-tertiary-fixed/20 rounded-full flex items-center justify-center p-8">
+                <div class="w-full aspect-square border border-tertiary-fixed/40 rounded-full flex items-center justify-center animate-[spin_20s_linear_infinite] p-8">
+                    <div class="w-full aspect-square border-2 border-tertiary-fixed rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(234,179,8,0.2)]">
+                        <span class="material-symbols-outlined text-6xl text-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">layers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="relative bg-primary border-t-4 border-tertiary-fixed pt-24 pb-8 overflow-hidden z-20">
+    <!-- Subtle Background Elements -->
+    <div class="absolute inset-0 blueprint-grid opacity-20 pointer-events-none"></div>
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-tertiary-fixed/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-container-max mx-auto px-margin-desktop relative z-10">
+        <!-- Top Row: Newsletter & Global Reach -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 pb-16 border-b border-primary-container/50">
+            <!-- Newsletter -->
+            <div>
+                <span class="font-label-caps text-label-caps text-tertiary-fixed uppercase tracking-widest mb-2 block">Technical Insider</span>
+                <h3 class="font-headline-md text-on-primary mb-4">Engineering Breakthroughs, Delivered.</h3>
+                <p class="font-body-sm text-on-primary-container mb-6 max-w-md">Join 15,000+ industry professionals receiving our quarterly whitepapers on advanced machining, metallurgy, and automation.</p>
+                <form class="flex gap-2 max-w-md" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Engineering Email Address" class="flex-1 bg-primary-container/50 border border-machined-silver/20 px-4 py-3 text-on-primary font-body-sm focus:outline-none focus:border-tertiary-fixed transition-colors" required>
+                    <button type="submit" class="bg-tertiary-fixed text-primary px-6 py-3 font-button text-button uppercase tracking-wider hover:bg-tertiary-fixed/90 transition-colors">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Global Hubs -->
+            <div class="lg:border-l lg:border-primary-container/50 lg:pl-16">
+                <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-6 block">Global Manufacturing Hubs</span>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 bg-tertiary-fixed rounded-full animate-pulse"></span>
+                            <h4 class="text-on-primary font-bold text-sm">Pune, India (HQ)</h4>
+                        </div>
+                        <p class="text-on-primary-container text-xs font-body-sm leading-relaxed">Phase II, Chakan Industrial Area<br>Maharashtra 410501</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 bg-machined-silver/30 rounded-full"></span>
+                            <h4 class="text-on-primary font-bold text-sm">Munich, Germany</h4>
+                        </div>
+                        <p class="text-on-primary-container text-xs font-body-sm leading-relaxed">Technologiepark 4<br>85748 Garching</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 bg-machined-silver/30 rounded-full"></span>
+                            <h4 class="text-on-primary font-bold text-sm">Detroit, USA</h4>
+                        </div>
+                        <p class="text-on-primary-container text-xs font-body-sm leading-relaxed">Advanced Tech Center<br>Troy, MI 48083</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-2 h-2 bg-machined-silver/30 rounded-full"></span>
+                            <h4 class="text-on-primary font-bold text-sm">Nagoya, Japan</h4>
+                        </div>
+                        <p class="text-on-primary-container text-xs font-body-sm leading-relaxed">Aichi Precision Valley<br>Toyota City 471-8571</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Row: Navigation Links -->
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 py-16 border-b border-primary-container/50">
+            <div class="col-span-2 lg:col-span-1">
+                <div class="font-display-lg text-headline-sm text-tertiary-fixed mb-4">Kawa Systems</div>
+                <p class="font-body-sm text-on-primary-container text-xs mb-6">Engineered for absolute precision. Built for the future of global manufacturing.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container hover:bg-tertiary-fixed hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-sm">share</span>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container hover:bg-tertiary-fixed hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-sm">mail</span>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h5 class="text-on-primary font-bold mb-6 text-xs uppercase tracking-widest">Products</h5>
+                <ul class="space-y-3">
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Precision End Mills</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Injection Molds</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Press Dies</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Jigs & Fixtures</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Custom Tooling</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-on-primary font-bold mb-6 text-xs uppercase tracking-widest">Capabilities</h5>
+                <ul class="space-y-3">
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">5-Axis Machining</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Wire EDM</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Surface Grinding</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">CMM Inspection</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Rapid Prototyping</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-on-primary font-bold mb-6 text-xs uppercase tracking-widest">Company</h5>
+                <ul class="space-y-3">
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="/about.html">About Us</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Leadership</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Careers</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Sustainability</a></li>
+                    <li><a class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors block" href="#">Investor Relations</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-on-primary font-bold mb-6 text-xs uppercase tracking-widest">Compliance</h5>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 bg-primary-container/30 border border-machined-silver/10 p-2">
+                        <span class="material-symbols-outlined text-tertiary-fixed text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        <div>
+                            <div class="text-on-primary text-[10px] font-bold uppercase tracking-wider">ISO 9001:2015</div>
+                            <div class="text-on-primary-container text-[9px] uppercase tracking-widest">Certified</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-primary-container/30 border border-machined-silver/10 p-2">
+                        <span class="material-symbols-outlined text-tertiary-fixed text-xl" style="font-variation-settings: 'FILL' 1;">flight</span>
+                        <div>
+                            <div class="text-on-primary text-[10px] font-bold uppercase tracking-wider">AS9100D</div>
+                            <div class="text-on-primary-container text-[9px] uppercase tracking-widest">Certified</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Row: Copyright & Legal -->
+        <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="font-body-sm text-on-primary-container text-xs">© 2024 Kawa Tooling Systems Ltd. All rights reserved.</p>
+            
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#" class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors">Privacy Policy</a>
+                <a href="#" class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors">Terms of Service</a>
+                <a href="#" class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors">Cookie Preferences</a>
+                <a href="#" class="font-body-sm text-xs text-on-primary-container hover:text-tertiary-fixed transition-colors">Supply Chain Act</a>
+            </div>
+
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center gap-2 font-label-caps text-[10px] uppercase tracking-widest text-on-primary hover:text-tertiary-fixed transition-colors group">
+                Back to top
+                <span class="w-8 h-8 rounded-full border border-machined-silver/30 flex items-center justify-center group-hover:border-tertiary-fixed transition-colors">
+                    <span class="material-symbols-outlined text-sm">arrow_upward</span>
+                </span>
+            </button>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
