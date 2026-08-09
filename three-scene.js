@@ -1,4 +1,17 @@
-import * as THREE from 'three';
+import { 
+  Scene, 
+  PerspectiveCamera, 
+  WebGLRenderer, 
+  AmbientLight, 
+  DirectionalLight, 
+  PointLight, 
+  MeshPhongMaterial, 
+  Group, 
+  Mesh, 
+  CylinderGeometry, 
+  BoxGeometry, 
+  MathUtils 
+} from 'three';
 
 export function initThreeScene() {
   const container = document.getElementById('threejs-canvas');
@@ -8,29 +21,29 @@ export function initThreeScene() {
   const width = window.innerWidth;
   const height = window.innerHeight;
 
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  const scene = new Scene();
+  const camera = new PerspectiveCamera(75, width / height, 0.1, 1000);
+  const renderer = new WebGLRenderer({ alpha: true, antialias: true });
 
   renderer.setSize(width, height);
   renderer.setPixelRatio(window.devicePixelRatio || 1);
   container.appendChild(renderer.domElement);
 
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+  const ambientLight = new AmbientLight(0xffffff, 0.5);
   scene.add(ambientLight);
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+  const directionalLight = new DirectionalLight(0xffffff, 1);
   directionalLight.position.set(5, 5, 5);
   scene.add(directionalLight);
-  const pointLight = new THREE.PointLight(0xdebe8a, 1);
+  const pointLight = new PointLight(0xdebe8a, 1);
   pointLight.position.set(-5, -5, 5);
   scene.add(pointLight);
 
-  const metallicMaterial = new THREE.MeshPhongMaterial({ color: 0x4c5d6f, specular: 0xdebe8a, shininess: 100 });
-  const goldMaterial = new THREE.MeshPhongMaterial({ color: 0xdebe8a, specular: 0xffffff, shininess: 100 });
+  const metallicMaterial = new MeshPhongMaterial({ color: 0x4c5d6f, specular: 0xdebe8a, shininess: 100 });
+  const goldMaterial = new MeshPhongMaterial({ color: 0xdebe8a, specular: 0xffffff, shininess: 100 });
 
   function createGear(radius, thickness, teethCount) {
-      const gear = new THREE.Group();
-      const core = new THREE.Mesh(new THREE.CylinderGeometry(radius * 0.85, radius * 0.85, thickness, 32), metallicMaterial);
+      const gear = new Group();
+      const core = new Mesh(new CylinderGeometry(radius * 0.85, radius * 0.85, thickness, 32), metallicMaterial);
       core.rotation.x = Math.PI / 2;
       gear.add(core);
 
@@ -39,20 +52,20 @@ export function initThreeScene() {
       
       for (let i = 0; i < teethCount; i++) {
           const angle = (i / teethCount) * Math.PI * 2;
-          const tooth = new THREE.Mesh(new THREE.BoxGeometry(toothWidth, toothHeight, thickness), metallicMaterial);
+          const tooth = new Mesh(new BoxGeometry(toothWidth, toothHeight, thickness), metallicMaterial);
           tooth.position.x = Math.cos(angle) * (radius + toothHeight/2 - 0.05);
           tooth.position.y = Math.sin(angle) * (radius + toothHeight/2 - 0.05);
           tooth.rotation.z = angle;
           gear.add(tooth);
       }
       
-      const center = new THREE.Mesh(new THREE.CylinderGeometry(radius * 0.2, radius * 0.2, thickness + 0.1, 16), goldMaterial);
+      const center = new Mesh(new CylinderGeometry(radius * 0.2, radius * 0.2, thickness + 0.1, 16), goldMaterial);
       center.rotation.x = Math.PI / 2;
       gear.add(center);
       return gear;
   }
 
-  const gearGroup = new THREE.Group();
+  const gearGroup = new Group();
 
   function getMeshRotation(contactAngleDeg, centerTeeth, satelliteTeeth) {
       const pitch1 = 360 / centerTeeth;
@@ -103,8 +116,8 @@ export function initThreeScene() {
       smallGear1.rotation.z -= baseSpeed * (12/6);
       smallGear2.rotation.z -= baseSpeed * (12/9);
 
-      gearGroup.rotation.y = THREE.MathUtils.lerp(gearGroup.rotation.y, mouseX * 0.2, 0.05);
-      gearGroup.rotation.x = THREE.MathUtils.lerp(gearGroup.rotation.x, mouseY * 0.2, 0.05);
+      gearGroup.rotation.y = MathUtils.lerp(gearGroup.rotation.y, mouseX * 0.2, 0.05);
+      gearGroup.rotation.x = MathUtils.lerp(gearGroup.rotation.x, mouseY * 0.2, 0.05);
 
       renderer.render(scene, camera);
   }
